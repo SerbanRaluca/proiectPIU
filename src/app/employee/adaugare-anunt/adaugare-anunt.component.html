@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Adăugare Anunț</h1>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="titlu">Titlu Anunț</label><br>
+            <input type="text" id="titlu" placeholder="ex.Organizator evenimente" formControlName="titlu"
+                class="formControl">
+            <span *ngIf="!postForm.get('titlu').valid && postForm.get('titlu').touched" class="help-block">
+                <span *ngIf="postForm.get('titlu').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="nume">Nume</label><br>
+            <input type="text" id="nume" formControlName="nume" class="formControl">
+            <span *ngIf="!postForm.get('nume').valid && postForm.get('nume').touched" class="help-block">
+                <span *ngIf="postForm.get('nume').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="locatie">Locatie</label><br>
+            <input type="text" id="locatie" formControlName="locatie" class="formControl">
+            <span *ngIf="!postForm.get('locatie').valid && postForm.get('locatie').touched" class="help-block">
+                <span *ngIf="postForm.get('locatie').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="decriere">Descriere Anunț</label>
+            <textarea class="form-control" id="descriere" rows="10" formControlName="descriere"
+                placeholder="Descriere..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="salariu">Salariu așteptat</label><br>
+            <input type="text" id="salariu" style="width:100px;margin: 10px;" class="form-control"
+                formControlName="salariu-min">EURO
+            <span *ngIf="!postForm.get('salariu-min').valid && postForm.get('salariu-min').touched" class="help-block">
+                <span *ngIf="postForm.get('salariu-min').errors['required']">Câmp obligatoriu!</span>
+            </span>
+            <input type="text" id="salariu" style="width:100px;margin: 10px;" class="form-control"
+                formControlName="salariu-max">EURO
+            <span *ngIf="!postForm.get('salariu-max').valid && postForm.get('salariu-max').touched" class="help-block">
+                <span *ngIf="postForm.get('salariu-max').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!postForm.valid">Postează anunț</button>
+    </form>
+</div>
+

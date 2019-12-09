@@ -1,0 +1,27 @@
+<div class="navbar navbar-default" style="background-color:lightskyblue">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+                <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+            </button>
+            <a routerLink="/"  routerLinkActive="active" class="navbar-brand"><strong style="color:mediumblue">BEST</strong><strong
+                    style="color:crimson">jobs</strong></a>
+        </div>
+        <div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+            <ul class="nav navbar-nav">
+                <li style="margin-inline-start: 300px;">
+                    <a class="nav-item nav-link" routerLink="/candidat"  routerLinkActive="active" style="background-color:lightskyblue;">Candidat</a>
+                </li>
+                <li  style="margin-inline-start: 50px;">
+                    <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" style="background-color:lightskyblue;">Angajator</a>
+                </li>
+            </ul>
+            <ul class="topnav-right">
+                <button class="btn btn-primary">Cont nou</button>
+                <button class="btn btn-primary">Autentificare</button>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    

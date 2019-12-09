@@ -1,0 +1,17 @@
+.container{
+  margin:0px;
+  padding: 0px;
+}
+
+img{
+ width:1250px;
+ height:400px;
+}
+.row{
+    display: flex; 
+    justify-content: center;
+}
+
+button{
+    margin: 10px;
+}
