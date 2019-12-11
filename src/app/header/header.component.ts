@@ -21,4 +21,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  candidat(){
+    console.log("candidat");
+    this.router.navigate(['candidat']);
+  }
+
 }

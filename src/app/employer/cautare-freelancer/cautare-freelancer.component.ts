@@ -11,8 +11,7 @@ import {Router} from '@angular/router';
 export class CautareFreelancerComponent implements OnInit {
 
   constructor(private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer,
-              private router: Router) {
+              private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       'microphone',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/images/radio-microphone.svg')

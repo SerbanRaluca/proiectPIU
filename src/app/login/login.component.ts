@@ -27,8 +27,15 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const email = this.postForm.value.email;
     const parola = this.postForm.value.parola;
-    this.router.navigate(['candidat']);
 
+    if (email === 'moldo@gmail.com' && parola === '1234') {
+      this.router.navigate(['angajator']);
+      sessionStorage.setItem('name', 'Moldovan Cristian');
+    }
+
+    if (email === 'raluca@gmail.com' && parola === '1234') {
+      this.router.navigate(['candidat']);
+      sessionStorage.setItem('name', 'Raluca Serban');
+    }
   }
-
 }

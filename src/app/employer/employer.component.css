@@ -16,3 +16,12 @@ img{
 button{
   margin: 10px;
 }
+
+.centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  color: white;
+  font-size: 50px;
+  transform: translate(-50%, -50%);
+}

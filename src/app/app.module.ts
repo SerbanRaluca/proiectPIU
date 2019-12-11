@@ -9,6 +9,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,7 +19,6 @@ import {MatCardModule} from '@angular/material/card';
 import { EmployeeComponent } from './employee/employee.component';
 import { AdaugareAnuntComponent } from './employee/adaugare-anunt/adaugare-anunt.component';
 import { CautareJobComponent } from './employee/cautare-job/cautare-job.component';
-import { CautareCategorieComponent } from './employee/cautare-job/cautare-categorie/cautare-categorie.component';
 import { RezultateCautareComponent } from './employee/cautare-job/rezultate-cautare/rezultate-cautare.component';
 import {ChooseRegistrationComponent} from './registration/choose-registration/choose-registration.component';
 import {CandidatRegistrationComponent} from './registration/candidat-registration/candidat-registration.component';
@@ -35,14 +35,13 @@ import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-
     EmployeeComponent,
     AdaugareAnuntComponent,
     CautareJobComponent,
-    CautareCategorieComponent,
     RezultateCautareComponent,
     ChooseRegistrationComponent,
     CandidatRegistrationComponent,
     EmployerRegistrationComponent,
     LoginComponent,
     EmployerComponent,
-    CautareFreelancerComponent
+    CautareFreelancerComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +56,8 @@ import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-
     MatTabsModule,
     MatGridListModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

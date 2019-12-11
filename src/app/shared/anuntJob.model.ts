@@ -1,9 +1,10 @@
 export class AnuntJob{
     constructor(
-        public categorie:String,
-        public angajator:String,
-        public titlu:String,
-        public locatie:String,
-        public descriere:String,
+        public categorie:string,
+        public angajator:string,
+        public logo:string,
+        public titlu:string,
+        public locatie:string,
+        public descriere:string,
         public salariu:number){}
 }
