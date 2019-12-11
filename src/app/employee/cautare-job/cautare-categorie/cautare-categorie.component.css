@@ -5,6 +5,7 @@ button{
 .container{
   width: auto;
   height: auto;
+  margin-left:0px;
 }
 
 .row{

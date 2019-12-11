@@ -13,4 +13,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  inregistrare() {
+    this.router.navigate(['chooseRegistration']);
+  }
+
+  login() {
+    this.router.navigate(['login']);
+  }
+
 }

@@ -1,0 +1,26 @@
+<div class="container">
+  <h1> Intră in cont</h1>
+
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+  <label for="email">Email</label><br>
+  <input type="text" id="email" formControlName="email" class="formControl">
+  <span *ngIf="!postForm.get('email').valid && postForm.get('email').touched" class="help-block">
+                <span *ngIf="postForm.get('email').errors['required']">Câmp obligatoriu!</span>
+            </span>
+  </div>
+
+  <div class="form-group">
+  <label for="parola"> Parolă</label>
+  <input type="password" class="form-control" id="parola" formControlName="parola">
+  <span *ngIf="!postForm.get('parola').valid && postForm.get('parola').touched" class="help-block">
+                <span *ngIf="postForm.get('parola').errors['required']">Câmp obligatoriu!</span>
+            </span>
+  </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!postForm.valid">Intră in cont</button>
+  </form>
+
+  <a routerLink="/chooseRegistration" routerLinkActive="active">Nu ai cont? Inregistrează-te aici</a>
+
+</div>

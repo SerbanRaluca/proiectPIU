@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
+<mat-grid-list cols="6" rowHeight="100px">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+        <div class="container" *ngIf="tile.type==='category'">
             <h4>Alegeți categoria dorită</h4>
             <mat-form-field>
                 <mat-label>Categorie</mat-label>
@@ -13,5 +13,8 @@
             </mat-form-field>
             <button class="btn btn-primary" (click)="cauta()">Caută</button>
         </div>
-    </div>
-</div>
+        <div *ngIf="tile.type==='results'">
+            <app-rezultate-cautare [rezultate]="rezultate"></app-rezultate-cautare>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

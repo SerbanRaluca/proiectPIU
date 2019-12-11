@@ -4,24 +4,44 @@
             <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
                 <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
             </button>
-            <a routerLink="/"  routerLinkActive="active" class="navbar-brand"><strong style="color:mediumblue">BEST</strong><strong
-                    style="color:crimson">jobs</strong></a>
+            <a routerLink="" routerLinkActive="active" class="navbar-brand"><strong
+                    style="color:mediumblue">BEST</strong><strong style="color:crimson">jobs</strong></a>
         </div>
         <div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
                 <li style="margin-inline-start: 300px;">
-                    <a class="nav-item nav-link" routerLink="/candidat"  routerLinkActive="active" style="background-color:lightskyblue;">Candidat</a>
-                </li>
-                <li  style="margin-inline-start: 50px;">
-                    <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" style="background-color:lightskyblue;">Angajator</a>
+                    <mat-tab-group mat-align-tabs="center">
+                        <mat-tab style="background-color: cornflowerblue;" (click)="menuTrigger.openMenu()">
+                            <ng-template mat-tab-label style="background-color: cornflowerblue;">
+                                Candidat<mat-icon #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="candidatMenu">
+                                    more_vert</mat-icon>
+                            </ng-template>
+                            <mat-menu #candidatMenu="matMenu">
+                                <button mat-menu-item>Caută job</button>
+                                <button mat-menu-item>Adaugă anunț</button>
+                            </mat-menu>
+                        </mat-tab>
+                        <mat-tab style="background-color: cornflowerblue;" (click)="menuTrigger.openMenu()">
+                            <ng-template mat-tab-label style="background-color: cornflowerblue;">
+                                Angajator<mat-icon #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="angajatorMenu">
+                                    more_vert</mat-icon>
+                            </ng-template>
+                            <mat-menu #angajatorMenu="matMenu">
+                                <button mat-menu-item>Caută freelancer</button>
+                                <button mat-menu-item>Adaugă anunț</button>
+                            </mat-menu>
+                        </mat-tab>
+                    </mat-tab-group>
                 </li>
             </ul>
+            <!-- <nav mat-tab-nav-bar>
+                <a mat-tab-link  routerLink="/candidat" routerLinkActive="active">Candidat</a>
+                <a mat-tab-link  routerLink="/angajator" routerLinkActive="active">Angajator</a>
+            </nav> -->
             <ul class="topnav-right">
-                <button class="btn btn-primary">Cont nou</button>
-                <button class="btn btn-primary">Autentificare</button>
+                <button class="btn btn-primary" (click)="inregistrare()">Cont nou</button>
+                <button class="btn btn-primary" (click)="login()">Autentificare</button>
             </ul>
         </div>
     </div>
 </div>
-
-    

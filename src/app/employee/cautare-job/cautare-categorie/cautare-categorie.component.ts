@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AnuntJob } from 'src/app/shared/anuntJob.model';
 
+export interface Tile {
+  type:string;
+  cols: number;
+  rows: number;
+}
+
 @Component({
   selector: 'app-cautare-categorie',
   templateUrl: './cautare-categorie.component.html',
@@ -27,8 +33,15 @@ export class CautareCategorieComponent implements OnInit {
        3000)
   ];
 
+  rezultate:AnuntJob[];
+
   selectedCategory: String;
   categoryControl:FormControl;
+
+  tiles: Tile[] = [
+    {type:"category",cols: 2, rows: 1},
+    {type:"results",cols: 4, rows: 3}
+  ];
   constructor() { }
 
   ngOnInit() {
@@ -38,9 +51,8 @@ export class CautareCategorieComponent implements OnInit {
   cauta(){
     this.selectedCategory=this.categoryControl.value;
     console.log(this.selectedCategory);
-    let anunturi:AnuntJob[];
-    anunturi=this.anunturiJob.filter(a=>a.categorie===this.selectedCategory);
-    console.log(anunturi);
+    this.rezultate=this.anunturiJob.filter(a=>a.categorie===this.selectedCategory);
+    console.log(this.rezultate);
   }
 
 }

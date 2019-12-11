@@ -6,3 +6,8 @@
 button{
   margin-right: 10px;
 }
+
+mat-tab{
+  width: auto;
+  height: auto;
+}
