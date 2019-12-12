@@ -30,16 +30,24 @@
         </div>
         <div class="form-group">
             <label for="salariu">Salariu așteptat</label><br>
-            <input type="text" id="salariu" style="width:100px;margin: 10px;" class="form-control"
-                formControlName="salariu-min">EURO
-            <span *ngIf="!postForm.get('salariu-min').valid && postForm.get('salariu-min').touched" class="help-block">
-                <span *ngIf="postForm.get('salariu-min').errors['required']">Câmp obligatoriu!</span>
-            </span>
-            <input type="text" id="salariu" style="width:100px;margin: 10px;" class="form-control"
-                formControlName="salariu-max">EURO
-            <span *ngIf="!postForm.get('salariu-max').valid && postForm.get('salariu-max').touched" class="help-block">
-                <span *ngIf="postForm.get('salariu-max').errors['required']">Câmp obligatoriu!</span>
-            </span>
+            <div class="form-row">
+                <div class="min">
+                    MIN:<input type="text" id="salariu" style="width:100px;margin: 10px;" class="form-control"
+                        formControlName="salariu-min">EURO
+                    <span *ngIf="!postForm.get('salariu-min').valid && postForm.get('salariu-min').touched"
+                        class="help-block">
+                        <span *ngIf="postForm.get('salariu-min').errors['required']">Câmp obligatoriu!</span>
+                    </span>
+                </div>
+                <div class="max">
+                    MAX:<input type="text" id="salariu" style="width:100px;margin: 10px;" class="form-control"
+                        formControlName="salariu-max">EURO
+                    <span *ngIf="!postForm.get('salariu-max').valid && postForm.get('salariu-max').touched"
+                        class="help-block">
+                        <span *ngIf="postForm.get('salariu-max').errors['required']">Câmp obligatoriu!</span>
+                    </span>
+                </div>
+            </div>
         </div>
         <button type="submit" class="btn btn-success" [disabled]="!postForm.valid">Postează anunț</button>
     </form>

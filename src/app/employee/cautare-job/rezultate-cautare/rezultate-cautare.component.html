@@ -1,20 +1,19 @@
 <div class="container">
     <div *ngIf="rezultate.length>0">
-        <mat-grid-list cols=3 #grid rowHeight="350px" gutterSize="15px">
+        <mat-grid-list cols=3 #grid rowHeight="470px">
             <mat-grid-tile *ngFor="let rezultat of rezultate">
                 <mat-card class="example-card">
-                    <img mat-card-image src='../../../assets/images/{{rezultat.logo}}'>
+                    <img mat-card-image src='../../../assets/images/{{rezultat.logo}}' style="height:200px;width:250px;border: black 1px solid;margin:12px;">
                     <mat-card-header>
                         <mat-card-title>{{rezultat.titlu}}</mat-card-title>
                         <mat-card-subtitle>{{rezultat.angajator}}</mat-card-subtitle>
                     </mat-card-header>
-                    <mat-card-content>
-                        <p>
-                            {{rezultat.descriere}}
-                        </p>
+                    <mat-card-content style="margin-left: 15px;">
+                        <h4>Locație:</h4>
+                        <p>{{rezultat.locatie}}</p>
                     </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>Detalii</button>
+                    <mat-card-actions style="margin-left: 15px;">
+                        <button mat-button class="btn btn-primary">Detalii</button>
                     </mat-card-actions>
                 </mat-card>
             </mat-grid-tile>

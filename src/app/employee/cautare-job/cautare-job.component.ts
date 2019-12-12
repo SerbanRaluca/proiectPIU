@@ -22,6 +22,7 @@ export class CautareJobComponent implements OnInit {
     'Programare',
     'Amenajari interioare',
     'Bucatari',
+    'Vanzari',
     'Fotograf evenimente',
     'Organizator petreceri'
   ];
@@ -58,7 +59,23 @@ export class CautareJobComponent implements OnInit {
             "Mid/ Senior QA Automation Engineer ",
             "Cluj-Napoca",
             "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
-            4000)
+            4000),
+            new AnuntJob(
+              "Vanzari",
+              "Carrefour Romania",
+              "Carrefour-logo.jpg",
+              "Asistent Decorari, Asistent Vanzari, Casier",
+              "Targu-Mures",
+              "Intra acum in Lumea Carrefour! E mai mult! E despre oameni!",
+              400),
+              new AnuntJob(
+                "Vanzari",
+                "Pepco",
+                "pepco-logo.jpg",
+                "Casier",
+                "Sibiu",
+                "Intra acum in Lumea Pepco! E mai mult! E despre oameni!",
+                400)
 
   ];
 
