@@ -3,7 +3,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
-import { MatIconModule } from '@angular/material';
+import { MatIconModule, MatDialogModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -26,6 +26,7 @@ import {EmployerRegistrationComponent} from './registration/employer-registratio
 import {LoginComponent} from './login/login.component';
 import {EmployerComponent} from './employer/employer.component';
 import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-freelancer.component';
+import { DetaliiJobComponent } from './employee/cautare-job/rezultate-cautare/detalii-job/detalii-job.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,13 @@ import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-
     LoginComponent,
     EmployerComponent,
     CautareFreelancerComponent,
+    DetaliiJobComponent
   ],
+
+  entryComponents: [
+    DetaliiJobComponent
+  ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -57,7 +64,8 @@ import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-
     MatGridListModule,
     MatListModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

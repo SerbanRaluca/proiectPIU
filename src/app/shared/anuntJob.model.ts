@@ -6,5 +6,6 @@ export class AnuntJob{
         public titlu:string,
         public locatie:string,
         public descriere:string,
-        public salariu:number){}
+        public salariu:number,
+        public nivel?:string){}
 }

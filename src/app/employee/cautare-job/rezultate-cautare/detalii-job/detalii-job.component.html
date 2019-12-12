@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>
+    Detalii job
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+        <span aria-hidden="true" class="white-text">&times;</span>
+    </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-sm-2" style="margin: 0px;padding: 0px;">
+            <img src='../../../assets/images/{{data.logo}}'
+                style="height:80px;width:80px;border: black 1px solid;margin-top:0px;margin-left: 10px;">
+        </div>
+        <div class="col-sm-5">
+            <h4 style="margin-top: 0px;">{{data.titlu}}</h4>
+            <h6><u>{{data.angajator}}</u></h6>
+        </div>
+        <div class="col-sm-3" >
+            <h4 style="margin-top: 0px;">
+                <mat-icon svgIcon="location" aria-hidden="false"
+                    style="width:20px;height:20px; color:cornflowerblue;margin-top:0px;margin-right:10px;"></mat-icon>
+                <p style="display: inline-block;">{{data.locatie}}</p>
+            </h4>
+        </div>
+    </div>
+    <div style="display: inline;align-content: center;">
+        <mat-icon svgIcon="briefcase" aria-hidden="false"
+            style="width:20px;height:20px; color:cornflowerblue;margin-top: 10px;margin-right:10px;display: inline-block;"></mat-icon>
+        <p style="justify-content: center; display: inline-block;margin-bottom: 0px;">{{data.nivel}}</p>
+    </div>
+    <h3>Descriere</h3>
+    <p>{{data.descriere}}</p>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial>Aplica acum!</button>
+</div>

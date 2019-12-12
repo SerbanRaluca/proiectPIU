@@ -31,7 +31,7 @@ export class CautareJobComponent implements OnInit {
     new AnuntJob(
       "Programare",
       "Banca Transilvania",
-      "bt_logo.jpg",
+      "bt-logo.jpg",
       "Senior Android Developer",
       "Cluj-Napoca",
       "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
@@ -39,15 +39,16 @@ export class CautareJobComponent implements OnInit {
        new AnuntJob(
          "Programare",
          "Banca Transilvania",
-         "bt_logo.jpg",
+         "bt-logo.jpg",
          "Mid/Senior BI Developer ",
          "Cluj-Napoca",
          "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
-         4000),
+         4000,
+         "Middle (2-5 years), Senior (5-10 years)"),
          new AnuntJob(
           "Programare",
           "Banca Transilvania",
-          "bt_logo.jpg",
+          "bt-logo.jpg",
           "Storage & Backup Engineer",
           "Cluj-Napoca",
           "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
@@ -55,7 +56,7 @@ export class CautareJobComponent implements OnInit {
           new AnuntJob(
             "Programare",
             "Banca Transilvania",
-            "bt_logo.jpg",
+            "bt-logo.jpg",
             "Mid/ Senior QA Automation Engineer ",
             "Cluj-Napoca",
             "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
