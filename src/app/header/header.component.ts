@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../user.model';
+import { Userservice } from '../shared/user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   collapsed=true;
-  constructor(private router:Router) { }
+  user:string=null;
+
+  constructor(private router:Router,private userService:Userservice) { }
 
   ngOnInit() {
+    this.user=sessionStorage.getItem("name");
+    console.log("user:"+this.user);
   }
 
   inregistrare() {
@@ -19,6 +25,13 @@ export class HeaderComponent implements OnInit {
 
   login() {
     this.router.navigate(['login']);
+  }
+
+  logout(){
+    console.log("logout");
+    sessionStorage.removeItem("name");
+    this.user=sessionStorage.getItem("name");
+    console.log("user:"+this.user);
   }
 
   candidat(){

@@ -18,10 +18,15 @@
                         style="background-color:lightskyblue;">Angajator</a>
                 </li>
             </ul>
-            <ul class="topnav-right">
+            <ul *ngIf="!user" class="topnav-right">
                 <button class="btn btn-primary" (click)="inregistrare()">Cont nou</button>
                 <button class="btn btn-primary" (click)="login()">Autentificare</button>
             </ul>
+
+            <ul *ngIf="user" class="topnav-right">
+                <button class="btn btn-primary" (click)="logout()">Deconectare</button>
+            </ul>
+
         </div>
     </div>
 </div>

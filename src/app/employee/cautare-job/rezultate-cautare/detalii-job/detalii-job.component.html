@@ -23,7 +23,7 @@
             </h4>
         </div>
     </div>
-    <div style="display: inline;align-content: center;">
+    <div *ngIf="data.nivel" style="display: inline;align-content: center;">
         <mat-icon svgIcon="briefcase" aria-hidden="false"
             style="width:20px;height:20px; color:cornflowerblue;margin-top: 10px;margin-right:10px;display: inline-block;"></mat-icon>
         <p style="justify-content: center; display: inline-block;margin-bottom: 0px;">{{data.nivel}}</p>

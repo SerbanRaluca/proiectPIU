@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AnuntJob } from 'src/app/shared/anuntJob.model';
 import { MatDialog } from '@angular/material';
 import { DetaliiJobComponent } from './detalii-job/detalii-job.component';
+import { JobApplication } from 'src/app/shared/job-application.model';
 
 @Component({
   selector: 'app-rezultate-cautare',
@@ -28,7 +29,11 @@ export class RezultateCautareComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("dialog closed");
-      
+      console.log(sessionStorage.getItem("name"));
+      let applications:JobApplication[]=[];
+      applications.push(new JobApplication(result,"applied"));
+      sessionStorage.setItem("job-applications",JSON.stringify(applications));
+      console.log(applications);
     });
 
   }
