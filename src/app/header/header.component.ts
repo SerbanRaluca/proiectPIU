@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../user.model';
 import { Userservice } from '../shared/user.service';
+import { MatIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +10,26 @@ import { Userservice } from '../shared/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  collapsed=true;
-  user:string=null;
+  collapsed = true;
+  user: string = null;
 
-  constructor(private router:Router,private userService:Userservice) { }
+  constructor(private router: Router,
+    private userService: Userservice,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'user',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/user.svg'));
+  }
 
   ngOnInit() {
-    this.user=sessionStorage.getItem("name");
-    console.log("user:"+this.user);
+
+    this.userService.currentUser.subscribe(user => {
+      this.user = user;
+      console.log("user:" + this.user);
+    });
   }
+
 
   inregistrare() {
     this.router.navigate(['chooseRegistration']);
@@ -27,14 +39,14 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  logout(){
+  logout() {
     console.log("logout");
     sessionStorage.removeItem("name");
-    this.user=sessionStorage.getItem("name");
-    console.log("user:"+this.user);
+    this.user = sessionStorage.getItem("name");
+    console.log("user:" + this.user);
   }
 
-  candidat(){
+  candidat() {
     console.log("candidat");
     this.router.navigate(['candidat']);
   }

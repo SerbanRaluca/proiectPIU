@@ -3,9 +3,10 @@ import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormControl, Validators } from '@angular/forms';
 import { AnuntJob } from 'src/app/shared/anuntJob.model';
+import { AnuntService } from 'src/app/shared/anunt.service';
 
 export interface Tile {
-  type:string;
+  type: string;
   cols: number;
   rows: number;
 }
@@ -17,101 +18,39 @@ export interface Tile {
 })
 export class CautareJobComponent implements OnInit {
 
-   categories:string[]=[
-    'All',
-    'Programare',
-    'Amenajari interioare',
-    'Bucatari',
-    'Vanzari',
-    'Fotograf evenimente',
-    'Organizator petreceri'
-  ];
-
-  anunturiJob:AnuntJob[]=[
-    new AnuntJob(
-      "Programare",
-      "Banca Transilvania",
-      "bt-logo.jpg",
-      "Senior Android Developer",
-      "Cluj-Napoca",
-      "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
-       3000),
-       new AnuntJob(
-         "Programare",
-         "Banca Transilvania",
-         "bt-logo.jpg",
-         "Mid/Senior BI Developer ",
-         "Cluj-Napoca",
-         "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
-         4000,
-         "Middle (2-5 years), Senior (5-10 years)"),
-         new AnuntJob(
-          "Programare",
-          "Banca Transilvania",
-          "bt-logo.jpg",
-          "Storage & Backup Engineer",
-          "Cluj-Napoca",
-          "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
-          4000),
-          new AnuntJob(
-            "Programare",
-            "Banca Transilvania",
-            "bt-logo.jpg",
-            "Mid/ Senior QA Automation Engineer ",
-            "Cluj-Napoca",
-            "Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.",
-            4000),
-            new AnuntJob(
-              "Vanzari",
-              "Carrefour Romania",
-              "Carrefour-logo.jpg",
-              "Asistent Decorari, Asistent Vanzari, Casier",
-              "Targu-Mures",
-              "Intra acum in Lumea Carrefour! E mai mult! E despre oameni!",
-              400),
-              new AnuntJob(
-                "Vanzari",
-                "Pepco",
-                "pepco-logo.jpg",
-                "Casier",
-                "Sibiu",
-                "Intra acum in Lumea Pepco! E mai mult! E despre oameni!",
-                400)
-
-  ];
-
-  rezultate:AnuntJob[];
+  rezultate: AnuntJob[];
 
   selectedCategory: string;
-  categoryControl:FormControl;
+  categoryControl: FormControl;
 
   tiles: Tile[] = [
-    {type:"category",cols: 2, rows: 2},
-    {type:"results",cols: 6, rows: 4}
+    { type: "category", cols: 2, rows: 2 },
+    { type: "results", cols: 6, rows: 4 }
   ];
-
-  ngOnInit() {
-    this.categoryControl = new FormControl('All', Validators.required);
-    this.rezultate=this.anunturiJob;
-  }
 
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
+    private anuntService:AnuntService
   ) {
     this.matIconRegistry.addSvgIcon(
       "microphone",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../../assets/images/radio-microphone.svg")
     );
-   }
+  }
 
-  cauta(){
-    this.selectedCategory=this.categoryControl.value;
+  ngOnInit() {
+    this.categoryControl = new FormControl('All', Validators.required);
+    this.rezultate = this.anuntService.getJobAnunturi();
+  }
+
+  cauta() {
+    this.selectedCategory = this.categoryControl.value;
     console.log(this.selectedCategory);
-    if(this.selectedCategory=="All"){
-      this.rezultate=this.anunturiJob;
-    }else{
-      this.rezultate=this.anunturiJob.filter(a=>a.categorie===this.selectedCategory);
+    if (this.selectedCategory == "All") {
+      this.rezultate = this.anuntService.getJobAnunturi();
+    } else {
+      this.rezultate = this.anuntService.getJobAnunturi().filter(a => a.categorie === this.selectedCategory);
     }
     console.log(this.rezultate);
   }

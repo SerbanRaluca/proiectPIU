@@ -11,6 +11,18 @@ import { JobApplication } from 'src/app/shared/job-application.model';
 })
 export class RezultateCautareComponent implements OnInit {
 
+  categories: string[] = [
+    'All',
+    'Programare',
+    'Amenajari interioare',
+    'Bucatari',
+    'Vanzari',
+    'Fotograf evenimente',
+    'Organizator petreceri'
+  ];
+
+  applications:JobApplication[]=[];
+
   @Input() rezultate:AnuntJob[];
 
   constructor(public dialog: MatDialog) {}
@@ -30,10 +42,9 @@ export class RezultateCautareComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log("dialog closed");
       console.log(sessionStorage.getItem("name"));
-      let applications:JobApplication[]=[];
-      applications.push(new JobApplication(result,"applied"));
-      sessionStorage.setItem("job-applications",JSON.stringify(applications));
-      console.log(applications);
+      this.applications.push(new JobApplication(result,"applied"));
+      sessionStorage.setItem("job-applications",JSON.stringify(this.applications));
+      console.log(this.applications);
     });
 
   }

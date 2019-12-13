@@ -9,7 +9,7 @@
         </div>
         <div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav" style="align-items: center;">
-                <li class="nav-item" style="margin-inline-start: 300px;">
+                <li class="nav-item" style="margin-inline-start: 400px;">
                     <a class="nav-link" routerLink="/candidat" routerLinkActive="active"
                         style="background-color:lightskyblue;">Candidat</a>
                 </li>
@@ -23,10 +23,20 @@
                 <button class="btn btn-primary" (click)="login()">Autentificare</button>
             </ul>
 
-            <ul *ngIf="user" class="topnav-right">
-                <button class="btn btn-primary" (click)="logout()">Deconectare</button>
-            </ul>
-
+            <div *ngIf="user" class="topnav-right" style="display: inline;align-content: center;">
+                <div class="dropdown" [matMenuTriggerFor]="menu" style="font-size: 15px;margin-bottom: 5px;margin-right:0px;">
+                    <mat-icon svgIcon="user" aria-hidden="true" style="width:20px;height:20px;margin-right: 10px;margin-bottom: 10px;">
+                    </mat-icon>{{user}}
+                </div>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Profil</button>
+                    <button mat-menu-item>Joburi favorite</button>
+                    <button mat-menu-item>Status</button>
+                    <button mat-menu-item>Contracte</button>
+                    <button mat-menu-item>Setari</button>
+                    <button mat-menu-item (click)="logout()">Deconectare</button>
+                </mat-menu>
+            </div>
         </div>
     </div>
 </div>

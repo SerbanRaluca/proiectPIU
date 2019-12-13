@@ -7,5 +7,7 @@ export class AnuntJob{
         public locatie:string,
         public descriere:string,
         public salariu:number,
-        public nivel?:string){}
+        public aplied:boolean,
+        public nivel?:string,
+       ){}
 }
