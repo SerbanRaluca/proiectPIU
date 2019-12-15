@@ -1,0 +1,51 @@
+<div class="container">
+  <h1>Adăugare Anunț</h1>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="categorie">Categorie</label><br>
+      <input type="text" id="categorie" placeholder="ex. Programator" formControlName="titlu"
+             class="formControl">
+      <span *ngIf="!postForm.get('categorie').valid && postForm.get('categorie').touched" class="help-block">
+                <span *ngIf="postForm.get('categorie').errors['required']">Câmp obligatoriu!</span>
+            </span>
+    </div>
+    <div class="form-group">
+      <label for="angajator">Angajator</label><br>
+      <input type="text" id="angajator" formControlName="angajator" class="formControl">
+      <span *ngIf="!postForm.get('angajator').valid && postForm.get('angajator').touched" class="help-block">
+                <span *ngIf="postForm.get('angajator').errors['required']">Câmp obligatoriu!</span>
+            </span>
+    </div>
+    <div class="form-group">
+      <label for="locatie">Locatie</label><br>
+      <input type="text" id="locatie" formControlName="locatie" class="formControl">
+      <span *ngIf="!postForm.get('locatie').valid && postForm.get('locatie').touched" class="help-block">
+                <span *ngIf="postForm.get('locatie').errors['required']">Câmp obligatoriu!</span>
+            </span>
+    </div>
+    <div class="form-group">
+      <label for="titlu">Titlu</label><br>
+      <input type="text" id="titlu" formControlName="titlu" placeholder="ex. Senior Developer" class="formControl">
+      <span *ngIf="!postForm.get('titlu').valid && postForm.get('titlu').touched" class="help-block">
+                <span *ngIf="postForm.get('titlu').errors['required']">Câmp obligatoriu!</span>
+            </span>
+    </div>
+    <div class="form-group">
+      <label for="salariu">Salariu</label><br>
+      <input type="text" id="salariu" formControlName="salariu" class="formControl">
+      <span *ngIf="!postForm.get('salariu').valid && postForm.get('salariu').touched" class="help-block">
+                <span *ngIf="postForm.get('salariu').errors['required']">Câmp obligatoriu!</span>
+            </span>
+    </div>
+    <div class="form-group">
+      <label for="nivel">Nivel (Optional)</label><br>
+      <input type="text" id="nivel" formControlName="nivel" class="formControl">
+    </div>
+    <div class="form-group">
+      <label for="descriere">Descriere Anunț</label>
+      <textarea class="form-control" id="descriere" rows="10" formControlName="descriere"
+                placeholder="Descriere..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-success" >Postează anunț</button>
+  </form>
+</div>
