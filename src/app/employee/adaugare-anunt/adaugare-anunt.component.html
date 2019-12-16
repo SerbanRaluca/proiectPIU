@@ -16,6 +16,19 @@
                 <span *ngIf="postForm.get('nume').errors['required']">Câmp obligatoriu!</span>
             </span>
         </div>
+      <div class="form-group">
+        <h4>Alegeți categoria dorită</h4>
+        <mat-form-field>
+          <mat-label>Categorie</mat-label>
+          <mat-select [formControl]="categoryControl" required>
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{category}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="categoryControl.hasError('required')">Alege o categorie</mat-error>
+        </mat-form-field>
+      </div>
+
         <div class="form-group">
             <label for="locatie">Locatie</label><br>
             <input type="text" id="locatie" formControlName="locatie" class="formControl">
@@ -24,7 +37,7 @@
             </span>
         </div>
         <div class="form-group">
-            <label for="decriere">Descriere Anunț</label>
+            <label for="descriere">Descriere Anunț</label>
             <textarea class="form-control" id="descriere" rows="10" formControlName="descriere"
                 placeholder="Descriere..."></textarea>
         </div>

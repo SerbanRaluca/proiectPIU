@@ -8,11 +8,11 @@ import { Router, ActivatedRoute, Routes, RouterLinkActive } from '@angular/route
 })
 export class EmployeeComponent implements AfterViewInit, OnInit {
   isViewInitialized = false;
-  
+
   navLinks = [];
   constructor(private route: ActivatedRoute,
-    private router: Router,
-    private changeDetector: ChangeDetectorRef) { }
+              private router: Router,
+              private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.navLinks = (
@@ -31,7 +31,7 @@ export class EmployeeComponent implements AfterViewInit, OnInit {
     return (routes)
       .filter(route => route.data)
       .map(({ path = '', data }) => ({
-        path: path,
+        path,
         label: data.label,
         icon: data.icon
       }));
@@ -39,16 +39,16 @@ export class EmployeeComponent implements AfterViewInit, OnInit {
 
   isLinkActive(rla: RouterLinkActive): boolean {
     const routerLink = rla.linksWithHrefs.first;
-    
+
     return this.router.isActive(routerLink.urlTree, false);
   }
 
-  adaugaAnunt(){
-    this.router.navigate(['candidat','anunt']);
+  adaugaAnunt() {
+    this.router.navigate(['candidat', 'anunt']);
   }
 
-  cautaJob(){
-    this.router.navigate(['candidat','cautare'])
+  cautaJob() {
+    this.router.navigate(['candidat', 'cautare']);
   }
 
 

@@ -27,6 +27,9 @@ import {LoginComponent} from './login/login.component';
 import {EmployerComponent} from './employer/employer.component';
 import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-freelancer.component';
 import { DetaliiJobComponent } from './employee/cautare-job/rezultate-cautare/detalii-job/detalii-job.component';
+import {AdaugareAnuntJobComponent} from './employer/adaugare-anunt-job/adaugare-anunt-job.component';
+import {RezultateCautareFreelanceriComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/rezultate-cautare-freelanceri.component';
+import {DetaliiFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/detalii-freelancer/detalii-freelancer.component';
 
 
 @NgModule({
@@ -44,11 +47,15 @@ import { DetaliiJobComponent } from './employee/cautare-job/rezultate-cautare/de
     LoginComponent,
     EmployerComponent,
     CautareFreelancerComponent,
-    DetaliiJobComponent
+    DetaliiJobComponent,
+    AdaugareAnuntJobComponent,
+    RezultateCautareFreelanceriComponent,
+    DetaliiFreelancerComponent
   ],
 
   entryComponents: [
-    DetaliiJobComponent
+    DetaliiJobComponent,
+    DetaliiFreelancerComponent
   ],
 
   imports: [
