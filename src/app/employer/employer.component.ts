@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import {Route, Router, ActivatedRoute, Routes, RouterLinkActive} from '@angular/router';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Route, Router, RouterLinkActive, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-employer',
@@ -7,21 +7,23 @@ import {Route, Router, ActivatedRoute, Routes, RouterLinkActive} from '@angular/
   styleUrls: ['./employer.component.css']
 })
 export class EmployerComponent implements OnInit {
+
   isViewInitialized = false;
-  
+
   navLinks = [];
   constructor(private route: ActivatedRoute,
-    private router: Router,
-    private changeDetector: ChangeDetectorRef) { }
+              private router: Router,
+              private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.navLinks = (
       this.route.routeConfig && this.route.routeConfig.children ?
-      this.buildNavItems(this.route.routeConfig.children) :
-      []
+        this.buildNavItems(this.route.routeConfig.children) :
+        []
     );
   }
 
+  // tslint:disable-next-line:use-lifecycle-interface
   ngAfterViewInit() {
     this.isViewInitialized = true;
     this.changeDetector.detectChanges();

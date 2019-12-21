@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { AnuntJob } from 'src/app/shared/anuntJob.model';
-import { MatDialog } from '@angular/material';
-import { DetaliiJobComponent } from './detalii-job/detalii-job.component';
-import { JobApplication } from 'src/app/shared/job-application.model';
+import {Component, OnInit, Input} from '@angular/core';
+import {AnuntJob} from 'src/app/shared/anuntJob.model';
+import {MatDialog} from '@angular/material';
+import {DetaliiJobComponent} from './detalii-job/detalii-job.component';
+import {JobApplication} from 'src/app/shared/job-application.model';
 
 @Component({
   selector: 'app-rezultate-cautare',
@@ -11,42 +11,33 @@ import { JobApplication } from 'src/app/shared/job-application.model';
 })
 export class RezultateCautareComponent implements OnInit {
 
-  categories: string[] = [
-    'All',
-    'Programare',
-    'Amenajari interioare',
-    'Bucatari',
-    'Vanzari',
-    'Fotograf evenimente',
-    'Organizator petreceri'
-  ];
+  applications: JobApplication[] = [];
 
-  applications:JobApplication[]=[];
+  @Input() rezultate: AnuntJob[];
 
-  @Input() rezultate:AnuntJob[];
-
-  constructor(public dialog: MatDialog) {}
-
-  ngOnInit() {
-    console.log(this.rezultate)
+  constructor(public dialog: MatDialog) {
   }
 
-  onDetails(rez:AnuntJob){
+  ngOnInit() {
+    console.log(this.rezultate);
+  }
+
+  onDetails(rez: AnuntJob) {
     const dialogRef = this.dialog.open(DetaliiJobComponent, {
       width: '800px',
-      height:'500px',
-      position:{top: '2%', left: '30%'},
+      height: '500px',
+      position: {top: '2%', left: '30%'},
       data: rez
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log("dialog closed");
-      console.log(sessionStorage.getItem("name"));
-      this.applications.push(new JobApplication(result,"applied"));
-      sessionStorage.setItem("job-applications",JSON.stringify(this.applications));
+      console.log('dialog closed');
+      console.log(sessionStorage.getItem('name'));
+      this.applications.push(new JobApplication(result, 'applied'));
+      sessionStorage.setItem('job-applications', JSON.stringify(this.applications));
       console.log(this.applications);
     });
 
   }
-   
+
 }

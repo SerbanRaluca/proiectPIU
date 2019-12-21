@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Anunt } from 'src/app/shared/anunt.model';
-import { AnuntService } from 'src/app/shared/anunt.service';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {Anunt} from 'src/app/shared/anunt.model';
+import {AnuntService} from 'src/app/shared/anunt.service';
+import {AnuntJob} from '../../shared/anuntJob.model';
 
 @Component({
   selector: 'app-adaugare-anunt',
@@ -9,31 +10,49 @@ import { AnuntService } from 'src/app/shared/anunt.service';
   styleUrls: ['./adaugare-anunt.component.css']
 })
 export class AdaugareAnuntComponent implements OnInit {
-  postForm:FormGroup;
+  postForm: FormGroup;
 
-  constructor(private service:AnuntService) { }
+  rezultate: Anunt[];
+  categoryControl: FormControl;
+  selectedCategory: string;
 
-  ngOnInit() {
-    this.postForm=new FormGroup({
-      'titlu':new FormControl(null,Validators.required),
-      'nume':new FormControl(null,Validators.required),
-      'locatie':new FormControl(null,Validators.required),
-      'descriere':new FormControl(null),
-      'salariu-min':new FormControl(null,Validators.required),
-      'salariu-max':new FormControl(null,Validators.required)
-    });
+  categories: string[] = [
+    'Programare',
+    'Amenajari interioare',
+    'Bucatari',
+    'Fotograf evenimente',
+    'Organizator petreceri'
+  ];
+
+  constructor(private service: AnuntService) {
   }
 
-  onSubmit(){
+  ngOnInit() {
+    this.postForm = new FormGroup({
+      titlu: new FormControl(null, Validators.required),
+      nume: new FormControl(null, Validators.required),
+      locatie: new FormControl(null, Validators.required),
+      descriere: new FormControl(null),
+      'salariu-min': new FormControl(null, Validators.required),
+      'salariu-max': new FormControl(null, Validators.required)
+    });
+
+    this.categoryControl = new FormControl('Programare', Validators.required);
+
+    this.rezultate = this.service.getFreelanceriAnunturi();
+  }
+
+  onSubmit() {
     console.log(this.postForm.value);
-    let titlu=this.postForm.value['titlu'];
-    let nume=this.postForm.value['nume'];
-    let locatie=this.postForm.value['locatie'];
-    let descriere=this.postForm.value['descriere'];
-    let salariu_min=this.postForm.value['salariu-min'];
-    let salariu_max=this.postForm.value['salariu-max'];
-    const anunt=new Anunt(titlu,nume,locatie,descriere,salariu_min,salariu_max);
-    this.service.saveAnunt(anunt);
+    const titlu = this.postForm.value.titlu;
+    const nume = this.postForm.value.nume;
+    const categorie = this.categoryControl.value;
+    const locatie = this.postForm.value.locatie;
+    const descriere = this.postForm.value.descriere;
+    const salariu_min = this.postForm.value['salariu-min'];
+    const salariu_max = this.postForm.value['salariu-max'];
+    const anunt = new Anunt(titlu, nume, categorie, locatie, 'bucatar.jpg', descriere, salariu_min, salariu_max, false);
+    this.rezultate.push(anunt);
   }
 
 }

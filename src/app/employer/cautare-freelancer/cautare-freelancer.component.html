@@ -1,18 +1,18 @@
 <div class="row" style="width:auto;height:auto">
   <div class="col-xs-3">
-      <h4>Alegeți categoria dorită</h4>
-      <mat-form-field>
-          <mat-label>Categorie</mat-label>
-          <mat-select [formControl]="categoryControl" required>
-              <mat-option *ngFor="let category of categories" [value]="category">
-                  {{category}}
-              </mat-option>
-          </mat-select>
-          <mat-error *ngIf="categoryControl.hasError('required')">Alege o categorie</mat-error>
-      </mat-form-field>
-      <button class="btn btn-primary" (click)="cauta()">Caută</button>
+    <h4>Alegeți categoria dorită</h4>
+    <mat-form-field>
+      <mat-label>Categorie</mat-label>
+      <mat-select [formControl]="categoryControl" required>
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="categoryControl.hasError('required')">Alege o categorie</mat-error>
+    </mat-form-field>
+    <button class="btn btn-primary" (click)="cauta()">Caută</button>
   </div>
   <div class="col-xs-9" style="height:auto">
-      <app-rezultate-cautare [rezultate]="rezultate"></app-rezultate-cautare>
+    <app-rezultate-cautare-freelanceri [rezultate]="rezultate"></app-rezultate-cautare-freelanceri>
   </div>
 </div>

@@ -1,9 +1,9 @@
-import { HomeComponent } from "./home/home.component";
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'
-import { EmployeeComponent } from './employee/employee.component';
-import { AdaugareAnuntComponent } from './employee/adaugare-anunt/adaugare-anunt.component';
-import { CautareJobComponent } from './employee/cautare-job/cautare-job.component';
+import {HomeComponent} from './home/home.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {EmployeeComponent} from './employee/employee.component';
+import {AdaugareAnuntComponent} from './employee/adaugare-anunt/adaugare-anunt.component';
+import {CautareJobComponent} from './employee/cautare-job/cautare-job.component';
 import {CandidatRegistrationComponent} from './registration/candidat-registration/candidat-registration.component';
 import {EmployerRegistrationComponent} from './registration/employer-registration/employer-registration.component';
 import {ChooseRegistrationComponent} from './registration/choose-registration/choose-registration.component';
@@ -34,10 +34,10 @@ const appRoutes: Routes = [
     {path: 'employerRegistration', component: EmployerRegistrationComponent}
    
   ];
-
+  
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {
 
