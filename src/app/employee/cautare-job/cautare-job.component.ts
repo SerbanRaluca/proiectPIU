@@ -20,6 +20,16 @@ export class CautareJobComponent implements OnInit {
 
   rezultate: AnuntJob[];
 
+  categories:string[]=[
+    'All',
+    'Programare',
+    'Amenajari interioare',
+    'Bucatari',
+    'Vanzari',
+    'Fotograf evenimente',
+    'Organizator petreceri'
+  ];
+
   selectedCategory: string;
   categoryControl: FormControl;
 
@@ -54,6 +64,5 @@ export class CautareJobComponent implements OnInit {
     }
     console.log(this.rezultate);
   }
-
 
 }

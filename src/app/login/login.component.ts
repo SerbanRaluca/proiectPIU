@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {LoginDTO} from '../shared/candidat.model';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import { Userservice } from '../shared/user.service';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   postForm: FormGroup;
 
   constructor(private router: Router,
-              private userService:Userservice) {
+              private userService:UserService) {
   }
 
   ngOnInit() {

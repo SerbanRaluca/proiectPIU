@@ -1,4 +1,4 @@
-export class Candidat {
+export class User {
   constructor(
     public prenume: string,
     public nume: string,

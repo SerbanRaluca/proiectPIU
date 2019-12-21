@@ -10,9 +10,11 @@ import {ChooseRegistrationComponent} from './registration/choose-registration/ch
 import {LoginComponent} from './login/login.component';
 import {EmployerComponent} from './employer/employer.component';
 import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-freelancer.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
+    {path:'profil',component:UserProfileComponent},
     {
       path: 'candidat', component: EmployeeComponent, children: [
         {path:' ',redirectTo:'cautare'},
@@ -22,8 +24,8 @@ const appRoutes: Routes = [
     },
     {
       path: 'angajator', component: EmployerComponent, children: [
-        {path: 'anunt', component: AdaugareAnuntComponent},
-        {path: 'cautare', component: CautareFreelancerComponent}
+        {path: 'cautare', component: CautareFreelancerComponent,data: { label: 'Cauta freelancer' }},
+        {path: 'anunt', component: AdaugareAnuntComponent,data: { label: 'Adauga anunt' }}
       ]
     },
     {path: 'login', component: LoginComponent},

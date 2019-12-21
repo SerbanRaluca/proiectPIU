@@ -27,6 +27,7 @@ import {LoginComponent} from './login/login.component';
 import {EmployerComponent} from './employer/employer.component';
 import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-freelancer.component';
 import { DetaliiJobComponent } from './employee/cautare-job/rezultate-cautare/detalii-job/detalii-job.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { DetaliiJobComponent } from './employee/cautare-job/rezultate-cautare/de
     LoginComponent,
     EmployerComponent,
     CautareFreelancerComponent,
-    DetaliiJobComponent
+    DetaliiJobComponent,
+    UserProfileComponent
   ],
 
   entryComponents: [

@@ -65,6 +65,7 @@ export class AnuntService{
       false)
   ];
 
+
     private anunturiCandidat:Anunt[]=[];
 
     constructor(private http: HttpClient){}

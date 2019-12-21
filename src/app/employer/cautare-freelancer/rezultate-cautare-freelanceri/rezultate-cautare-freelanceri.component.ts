@@ -1,9 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FreelancerApplication, JobApplication} from '../../../shared/job-application.model';
+import {FreelancerApplication} from '../../../shared/job-application.model';
 import {Anunt} from '../../../shared/anunt.model';
 import {MatDialog} from '@angular/material';
-import {AnuntJob} from '../../../shared/anuntJob.model';
-import {DetaliiJobComponent} from '../../../employee/cautare-job/rezultate-cautare/detalii-job/detalii-job.component';
 import {DetaliiFreelancerComponent} from './detalii-freelancer/detalii-freelancer.component';
 
 @Component({

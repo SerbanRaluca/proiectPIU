@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CandidatService} from '../../shared/candidat.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Candidat} from '../../shared/candidat.model';
+import { User } from 'src/app/shared/user.model';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-employer-registration',
@@ -11,7 +11,7 @@ import {Candidat} from '../../shared/candidat.model';
 export class EmployerRegistrationComponent implements OnInit {
   postForm: FormGroup;
 
-  constructor(private service: CandidatService) {
+  constructor(private service: UserService) {
   }
 
   ngOnInit() {
@@ -33,8 +33,8 @@ export class EmployerRegistrationComponent implements OnInit {
     const parola = this.postForm.value.parola;
     const oras = this.postForm.value.oras;
     const dataNasterii = this.postForm.value.dataNasterii;
-    const candidat = new Candidat(prenume, nume, email, parola, oras, dataNasterii, 'EMPLOYER');
-    this.service.saveCandidat(candidat);
+    const candidat = new User(prenume, nume, email, parola, oras, dataNasterii, 'EMPLOYER');
+    this.service.saveUser(candidat);
   }
 
 }

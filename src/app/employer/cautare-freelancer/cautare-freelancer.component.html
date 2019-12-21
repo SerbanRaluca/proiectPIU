@@ -1,12 +1,18 @@
-<!-- <hr>
-<mat-tab-group mat-align-tabs="center" >
-  <mat-tab label="Categorie"style="background-color: cornflowerblue;">
-    <app-cautare-categorie></app-cautare-categorie>
-  </mat-tab>
-  <mat-tab label="Locație" style="background-color: cornflowerblue;"></mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label style="background-color: cornflowerblue;">
-      <mat-icon svgIcon="microphone" ></mat-icon>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group> -->
+<div class="row" style="width:auto;height:auto">
+  <div class="col-xs-3">
+      <h4>Alegeți categoria dorită</h4>
+      <mat-form-field>
+          <mat-label>Categorie</mat-label>
+          <mat-select [formControl]="categoryControl" required>
+              <mat-option *ngFor="let category of categories" [value]="category">
+                  {{category}}
+              </mat-option>
+          </mat-select>
+          <mat-error *ngIf="categoryControl.hasError('required')">Alege o categorie</mat-error>
+      </mat-form-field>
+      <button class="btn btn-primary" (click)="cauta()">Caută</button>
+  </div>
+  <div class="col-xs-9" style="height:auto">
+      <app-rezultate-cautare [rezultate]="rezultate"></app-rezultate-cautare>
+  </div>
+</div>

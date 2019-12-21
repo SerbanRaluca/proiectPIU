@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { Userservice } from '../shared/user.service';
+import { UserService } from '../shared/user.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   user: string = null;
 
   constructor(private router: Router,
-    private userService: Userservice,
+    private userService: UserService,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
@@ -44,11 +44,16 @@ export class HeaderComponent implements OnInit {
     sessionStorage.removeItem("name");
     this.user = sessionStorage.getItem("name");
     console.log("user:" + this.user);
+    this.router.navigate(['']);
   }
 
   candidat() {
     console.log("candidat");
     this.router.navigate(['candidat']);
+  }
+
+  goToProfile(){
+    this.router.navigate(['profil']);
   }
 
 }
