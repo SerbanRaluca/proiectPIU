@@ -20,9 +20,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { AdaugareAnuntComponent } from './employee/adaugare-anunt/adaugare-anunt.component';
 import { CautareJobComponent } from './employee/cautare-job/cautare-job.component';
 import { RezultateCautareComponent } from './employee/cautare-job/rezultate-cautare/rezultate-cautare.component';
-import {ChooseRegistrationComponent} from './registration/choose-registration/choose-registration.component';
-import {CandidatRegistrationComponent} from './registration/candidat-registration/candidat-registration.component';
-import {EmployerRegistrationComponent} from './registration/employer-registration/employer-registration.component';
+import {RegistrationComponent} from './registration/registration.component';
 import {LoginComponent} from './login/login.component';
 import {EmployerComponent} from './employer/employer.component';
 import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-freelancer.component';
@@ -31,6 +29,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import {AdaugareAnuntJobComponent} from './employer/adaugare-anunt-job/adaugare-anunt-job.component';
 import {RezultateCautareFreelanceriComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/rezultate-cautare-freelanceri.component';
 import {DetaliiFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/detalii-freelancer/detalii-freelancer.component';
+import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/incarcare-documente.component';
+import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
 
 
 @NgModule({
@@ -42,9 +42,7 @@ import {DetaliiFreelancerComponent} from './employer/cautare-freelancer/rezultat
     AdaugareAnuntComponent,
     CautareJobComponent,
     RezultateCautareComponent,
-    ChooseRegistrationComponent,
-    CandidatRegistrationComponent,
-    EmployerRegistrationComponent,
+    RegistrationComponent,
     LoginComponent,
     EmployerComponent,
     CautareFreelancerComponent,
@@ -52,7 +50,9 @@ import {DetaliiFreelancerComponent} from './employer/cautare-freelancer/rezultat
     UserProfileComponent,
     AdaugareAnuntJobComponent,
     RezultateCautareFreelanceriComponent,
-    DetaliiFreelancerComponent
+    DetaliiFreelancerComponent,
+    IncarcareDocumenteComponent,
+    DetaliiProfilComponent
   ],
 
   entryComponents: [

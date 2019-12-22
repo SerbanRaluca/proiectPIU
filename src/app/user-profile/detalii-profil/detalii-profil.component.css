@@ -1,0 +1,295 @@
+
+body{margin-top:20px;}
+
+.align-center, .center {
+    text-align: center!important;
+}
+
+.profile-user-info {
+    display: table;
+    width: 98%;
+    width: calc(100% - 24px);
+    margin: 0 auto
+}
+
+.profile-info-row {
+    display: table-row
+}
+
+.profile-info-name,
+.profile-info-value {
+    display: table-cell;
+    border-top: 1px dotted #D5E4F1
+}
+
+.profile-info-name {
+    text-align: right;
+    padding: 6px 10px 6px 4px;
+    font-weight: 400;
+    color: #667E99;
+    background-color: transparent;
+    width: 110px;
+    vertical-align: middle
+}
+
+.profile-info-value {
+    padding: 6px 4px 6px 6px
+}
+
+.profile-info-value>span+span:before {
+    display: inline;
+    content: ",";
+    margin-left: 1px;
+    margin-right: 3px;
+    color: #666;
+    border-bottom: 1px solid #FFF
+}
+
+.profile-info-value>span+span.editable-container:before {
+    display: none
+}
+
+.profile-info-row:first-child .profile-info-name,
+.profile-info-row:first-child .profile-info-value {
+    border-top: none
+}
+
+.profile-user-info-striped {
+    border: 1px solid #DCEBF7
+}
+
+.profile-user-info-striped .profile-info-name {
+    color: #336199;
+    background-color: #EDF3F4;
+    border-top: 1px solid #F7FBFF
+}
+
+.profile-user-info-striped .profile-info-value {
+    border-top: 1px dotted #DCEBF7;
+    padding-left: 12px
+}
+
+.profile-picture {
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    padding: 4px;
+    display: inline-block;
+    max-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .15)
+}
+
+.tab-content {
+    border: 1px solid #C5D0DC;
+    padding: 16px 12px;
+    position: relative
+}
+
+.tab-content.no-padding {
+    padding: 0
+}
+
+.tab-content.no-border {
+    border: none;
+    padding: 12px
+}
+
+.tab-content.padding-32 {
+    padding: 32px 24px
+}
+
+.tab-content.no-border.padding-32 {
+    padding: 32px
+}
+
+.tab-content.padding-30 {
+    padding: 30px 23px
+}
+
+.tab-content.no-border.padding-30 {
+    padding: 30px
+}
+
+.tab-content.padding-28 {
+    padding: 28px 21px
+}
+
+.tab-content.no-border.padding-28 {
+    padding: 28px
+}
+
+.tab-content.padding-26 {
+    padding: 26px 20px
+}
+
+.tab-content.no-border.padding-26 {
+    padding: 26px
+}
+
+.tab-content.padding-24 {
+    padding: 24px 18px
+}
+
+.tab-content.no-border.padding-24 {
+    padding: 24px
+}
+
+.tab-content.padding-22 {
+    padding: 22px 17px
+}
+
+.tab-content.no-border.padding-22 {
+    padding: 22px
+}
+
+.tab-content.padding-20 {
+    padding: 20px 15px
+}
+
+.tab-content.no-border.padding-20 {
+    padding: 20px
+}
+
+.tab-content.padding-18 {
+    padding: 18px 14px
+}
+
+.tab-content.no-border.padding-18 {
+    padding: 18px
+}
+
+.tab-content.padding-16 {
+    padding: 16px 12px
+}
+
+.tab-content.no-border.padding-16 {
+    padding: 16px
+}
+
+.tab-content.padding-14 {
+    padding: 14px 11px
+}
+
+.tab-content.no-border.padding-14 {
+    padding: 14px
+}
+
+.tab-content.padding-12 {
+    padding: 12px 9px
+}
+
+.tab-content.no-border.padding-12 {
+    padding: 12px
+}
+
+.tab-content.padding-10 {
+    padding: 10px 8px
+}
+
+.tab-content.no-border.padding-10 {
+    padding: 10px
+}
+
+.tab-content.padding-8 {
+    padding: 8px 6px
+}
+
+.tab-content.no-border.padding-8 {
+    padding: 8px
+}
+
+.tab-content.padding-6 {
+    padding: 6px 5px
+}
+
+.tab-content.no-border.padding-6 {
+    padding: 6px
+}
+
+.tab-content.padding-4 {
+    padding: 4px 3px
+}
+
+.tab-content.no-border.padding-4 {
+    padding: 4px
+}
+
+.tab-content.no-border.padding-2,
+.tab-content.padding-2 {
+    padding: 2px
+}
+
+.tab-content.no-border.padding-0,
+.tab-content.padding-0 {
+    padding: 0
+}
+
+.dark {
+    color: #333!important
+}
+
+.white {
+    color: #FFF!important
+}
+
+.red {
+    color: #DD5A43!important
+}
+
+.red2 {
+    color: #E08374!important
+}
+
+.light-red {
+    color: #F77!important
+}
+
+.blue {
+    color: #478FCA!important
+}
+
+.light-blue {
+    color: #93CBF9!important
+}
+
+.green {
+    color: #69AA46!important
+}
+
+.light-green {
+    color: #B0D877!important
+}
+
+.orange {
+    color: #FF892A!important
+}
+
+.orange2 {
+    color: #FEB902!important
+}
+
+.light-orange {
+    color: #FCAC6F!important
+}
+
+.purple {
+    color: #A069C3!important
+}
+
+.pink {
+    color: #C6699F!important
+}
+
+.pink2 {
+    color: #D6487E!important
+}
+
+.brown {
+    color: brown!important
+}
+
+.grey {
+    color: #777!important
+}

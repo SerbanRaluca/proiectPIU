@@ -33,15 +33,6 @@ export class CautareJobComponent implements OnInit {
   selectedCategory: string;
   categoryControl: FormControl;
 
-  categories: string[] = [
-    'All',
-    'Programare',
-    'Amenajari interioare',
-    'Bucatari',
-    'Fotograf evenimente',
-    'Organizator petreceri'
-  ];
-
   tiles: Tile[] = [
     {type: 'category', cols: 2, rows: 2},
     {type: 'results', cols: 6, rows: 4}

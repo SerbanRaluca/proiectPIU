@@ -1,1 +1,19 @@
-<p>user-profile works!</p>
+<div id="user-profile-2" class="user-profile">
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li routerLinkActive="active">
+                <a data-toggle="tab" routerLink="detalii">
+                    <i class="fa fa-user "></i>
+                    Detalii
+                </a>
+            </li>
+            <li routerLinkActive="active">
+                <a data-toggle="tab" routerLink="documente">
+                    <i class="fa fa-file"></i>
+                    Documente
+                </a>
+            </li>
+        </ul>
+    </div>
+    <router-outlet></router-outlet>
+</div>

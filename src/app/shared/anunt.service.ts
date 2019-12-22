@@ -70,19 +70,21 @@ export class AnuntService {
   ];
 
   anunturiFreelancer: Anunt[] = [
-    new Anunt('Bucatar',
+    new Anunt(
+      'Bucatar',
       'Simion Ionut',
       'Bucatari',
       'Sibiu',
       'bucatar.jpg',
-      'Lucrez ca si bucatar de 2 ani de zile. Daca aveti un eveniment la care doriti sa aveti' +
+      'Lucrez ca si bucatar de 2 ani de zile. Daca aveti un eveniment la care doriti sa aveti ' +
       'un bucatar cu experienta eu sunt cel pe care il cautati',
       100,
       300,
       false),
-  new Anunt('Fotograf profesionist',
+  new Anunt(
+    'Fotograf profesionist',
     'Ceuca Vlad',
-    'Fotograv evenimente',
+    'Fotograf evenimente',
     'Cluj-Napoca',
     'aparatfoto.jpg',
     'Eu sunt cel pe care il cauti',

@@ -16,6 +16,7 @@
                 <span *ngIf="postForm.get('nume').errors['required']">Câmp obligatoriu!</span>
             </span>
     </div>
+
     <div class="form-group">
       <label for="email">Email</label><br>
       <input type="text" id="email" formControlName="email" class="formControl">
@@ -23,6 +24,15 @@
                 <span *ngIf="postForm.get('email').errors['required']">Câmp obligatoriu!</span>
             </span>
     </div>
+
+    <div class="form-group">
+      <label for="username">Username</label><br>
+      <input type="text" id="username" formControlName="username" class="formControl">
+      <span *ngIf="!postForm.get('username').valid && postForm.get('username').touched" class="help-block">
+                <span *ngIf="postForm.get('username').errors['required']">Câmp obligatoriu!</span>
+            </span>
+    </div>
+
     <div class="form-group">
       <label for="parola"> Parolă</label>
       <input type="password" class="form-control" id="parola" formControlName="parola">
@@ -44,6 +54,14 @@
         <input type="date" id="dataNasterii"  class="form-control" formControlName="dataNasterii">
         <span *ngIf="!postForm.get('dataNasterii').valid && postForm.get('dataNasterii').touched" class="help-block">
                 <span *ngIf="postForm.get('dataNasterii').errors['required']">Câmp obligatoriu!</span>
+            </span>
+      </div>
+
+      <div class="form-group">
+        <label for="varsta">Varsta</label><br>
+        <input type="number" id="varsta"  class="form-control" formControlName="varsta">
+        <span *ngIf="!postForm.get('varsta').valid && postForm.get('varsta').touched" class="help-block">
+                <span *ngIf="postForm.get('varsta').errors['required']">Câmp obligatoriu!</span>
             </span>
       </div>
 
