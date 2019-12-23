@@ -22,7 +22,7 @@ export class UserService {
             new Date("18-08-1997"),
             22,
             'CANDIDAT',
-            new Profil("raluca.jpg")
+            new Profil("raluca.jpg",[])
         ),
         new User(
             "Cristian",
@@ -34,7 +34,7 @@ export class UserService {
             new Date("19-07-1997"),
             22,
             'ANGAJATOR',
-            new Profil("profil.png")
+            new Profil("profil.png",[])
         )
     ]
 
@@ -44,7 +44,7 @@ export class UserService {
     }
 
     setUser(user: string) {
-        sessionStorage.setItem("user", user);
+        sessionStorage.setItem("name", user);
         this.currentUserSubject.next(user);
     }
 

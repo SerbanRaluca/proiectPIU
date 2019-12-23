@@ -1,1 +1,45 @@
-<p>incarcare-documente works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 offset-md-3">
+            <h3>Choose File</h3>
+            <div class="upload-btn-wrapper">
+                <button class="btn btn-primary">
+                    <mat-icon
+                        style="vertical-align: middle;width:auto;height:auto; display: inline-block;padding:0px;margin:0px">
+                        add</mat-icon>
+                    <p style="vertical-align: middle; display: inline-block;padding:0px;margin:0px;">Alege fisier</p>
+                </button>
+
+                <input type="file" name="myfile" (change)="uploadFile()" #inputFile />
+            </div>
+            <mat-card *ngIf="upload">
+                <mat-card-content>
+                    <h3 class="example-h2">{{document}}<i class="fa fa-window-close" style="float: right;"
+                            (click)="cancel()" *ngIf="ready"></i></h3>
+
+                    <section class="example-section">
+                        <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value">
+                        </mat-progress-bar>
+                    </section>
+                </mat-card-content>
+                <button class="btn btn-primary" (click)="finish()" *ngIf="ready"><i class="fa fa-upload"
+                        style="margin-right: 10px;"></i>Incarcă document</button>
+            </mat-card>
+        </div>
+        <div class="col-md-9 offset-md-3">
+            <h3>Documente</h3>
+            <div *ngIf="user.profil.documente.length==0">
+                <p>Nu există documente atașate acestui profil!Adaugați un document(ex.CV,scrisoare de intenție,scrisoare
+                    de recomandare etc.</p>
+            </div>
+            <div *ngIf="user.profil.documente.length>0">
+                <p *ngFor="let doc of user.profil.documente">
+                    <mat-icon svgIcon="file" aria-hidden="false"
+                        style="width:20px;height:20px; color:cornflowerblue;margin-top: 10px;margin-right:10px;display: inline-block;">
+                    </mat-icon>
+                    {{doc}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

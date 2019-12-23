@@ -10,6 +10,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -61,7 +62,7 @@ import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-pr
   ],
 
   imports: [
-    BrowserModule,
+    BrowserModule, 
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -75,7 +76,8 @@ import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-pr
     MatListModule,
     MatMenuModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

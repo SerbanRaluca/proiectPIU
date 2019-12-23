@@ -38,7 +38,7 @@ export class RegistrationComponent implements OnInit {
     const oras = this.postForm.value.oras;
     const varsta = this.postForm.value.varsta;
     const dataNasterii = this.postForm.value.dataNasterii;
-    const candidat = new User(prenume, nume, email,username, parola, oras, dataNasterii,varsta, 'CANDIDAT',new Profil("profil.png"));
+    const candidat = new User(prenume, nume, email,username, parola, oras, dataNasterii,varsta, 'CANDIDAT',new Profil("profil.png",[]));
     this.service.saveUser(candidat);
   }
 }
