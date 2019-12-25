@@ -22,7 +22,7 @@ export class UserService {
             new Date("18-08-1997"),
             22,
             'CANDIDAT',
-            new Profil("raluca.jpg",[])
+            new Profil("serban_raluca.JPG",[])
         ),
         new User(
             "Cristian",

@@ -41,7 +41,7 @@ export class IncarcareDocumenteComponent implements OnInit {
     this.upload = true;
     let path = this.myInputVariable.nativeElement.value;
     console.log(path);
-    let doc = path.split("\\", 10)
+    let doc = path.split("\\", 10);
     this.document = doc[doc.length - 1]
     console.log(this.document);
     var interval = setInterval(() => {
@@ -56,7 +56,7 @@ export class IncarcareDocumenteComponent implements OnInit {
   }
 
   finish() {
-    console.log("finish")
+    console.log("finish");
     this.upload = false;
     this.ready = false;
     this.value = 0;
