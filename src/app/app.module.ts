@@ -32,7 +32,8 @@ import {RezultateCautareFreelanceriComponent} from './employer/cautare-freelance
 import {DetaliiFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/detalii-freelancer/detalii-freelancer.component';
 import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/incarcare-documente.component';
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
-
+import { ConfirmareCautareComponent } from './confirmare-cautare/confirmare-cautare.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -53,12 +54,14 @@ import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-pr
     RezultateCautareFreelanceriComponent,
     DetaliiFreelancerComponent,
     IncarcareDocumenteComponent,
-    DetaliiProfilComponent
+    DetaliiProfilComponent,
+    ConfirmareCautareComponent
   ],
 
   entryComponents: [
     DetaliiJobComponent,
-    DetaliiFreelancerComponent
+    DetaliiFreelancerComponent,
+    ConfirmareCautareComponent
   ],
 
   imports: [
@@ -77,7 +80,12 @@ import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-pr
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    AgmCoreModule.forRoot({
+      // please get your own API key here:
+      // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+      apiKey: ''
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

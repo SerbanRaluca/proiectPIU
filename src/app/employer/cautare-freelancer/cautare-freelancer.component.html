@@ -1,14 +1,22 @@
 <div class="row" style="width:auto;height:auto">
-  <div class="col-xs-3">
+  <div class="col-xs-2">
     <h4>Alegeți categoria dorită</h4>
     <mat-form-field>
       <mat-label>Categorie</mat-label>
-      <mat-select [formControl]="categoryControl" required>
+      <mat-select [formControl]="categoryControl" [(ngModel)]="selectedCategory">
         <mat-option *ngFor="let category of categories" [value]="category">
           {{category}}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="categoryControl.hasError('required')">Alege o categorie</mat-error>
+    </mat-form-field>
+    <h4>Alegeți locația dorită</h4>
+    <mat-form-field>
+      <mat-label>Locație</mat-label>
+      <mat-select [formControl]="locationControl" [(ngModel)]="selectedLocation">
+        <mat-option *ngFor="let location of locations" [value]="location">
+          {{location}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <button class="btn btn-primary" (click)="cauta()">Caută</button>
   </div>

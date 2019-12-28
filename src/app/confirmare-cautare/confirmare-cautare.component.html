@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>
+    Informații Căutare
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+        <span aria-hidden="true" class="black-text">&times;</span>
+    </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Categorie</h3>
+            <p *ngIf="data.categorie!='All'">{{data.categorie}}</p>
+            <p *ngIf="data.categorie=='All'">Toate categoriile</p>
+        </div>
+        <div class="col-sm-6">
+            <h3>Locatie</h3>
+            <p *ngIf="data.locatie!='All'">{{data.locatie}}</p>
+            <p *ngIf="data.locatie=='All'">Toate locatiile</p>
+        </div>
+    </div>
+    <agm-map [latitude]='latitude' 
+             [longitude]='longitude' 
+             [zoom]='zoom' style="height: 250px;"
+             [disableDefaultUI]="false" 
+             [zoomControl]="false" 
+             (mapClick)="mapClicked($event)">
+        <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)"
+            [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable">
+        </agm-marker>
+    </agm-map>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial (click)="confirm()">Vezi
+        Rezultate</button>
+</div>

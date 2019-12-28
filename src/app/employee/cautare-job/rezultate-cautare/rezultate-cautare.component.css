@@ -1,11 +1,11 @@
 .container{
     width: auto;
     height: auto;
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 .example-card {
-    margin:5px;
+    margin:10px;
     padding:0px;
     padding-left: 10px;
     width: 350px;

@@ -54,7 +54,7 @@ export class AnuntService {
       'Carrefour Romania',
       'Carrefour-logo.jpg',
       'Asistent Decorari, Asistent Vanzari, Casier',
-      'Targu-Mures',
+      'Târgu-Mureș',
       'Intra acum in Lumea Carrefour! E mai mult! E despre oameni!',
       400,
       false),
