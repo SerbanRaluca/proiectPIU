@@ -6,6 +6,7 @@ import { AnuntJob } from 'src/app/shared/anuntJob.model';
 import { AnuntService } from 'src/app/shared/anunt.service';
 import { DateCautare } from 'src/app/shared/dateCautare.model';
 import { ConfirmareCautareComponent } from '../../confirmare-cautare/confirmare-cautare.component';
+import { AsistentaAudioComponent } from 'src/app/asisienta-audio/asisienta-audio.component';
 
 export interface Tile {
   type: string;
@@ -23,7 +24,7 @@ export class CautareJobComponent implements OnInit {
   rezultate: AnuntJob[];
 
   categories: string[] = [
-    'All',
+    'Toate categoriile',
     'Programare',
     'Amenajari interioare',
     'Bucatari',
@@ -33,7 +34,7 @@ export class CautareJobComponent implements OnInit {
   ];
 
   locations: String[] = [
-    'All',
+    'Toate locațiile',
     "Cluj-Napoca",
     "Târgu-Mureș",
     "Sibiu",
@@ -42,8 +43,8 @@ export class CautareJobComponent implements OnInit {
     "Timișoara"
   ]
 
-  selectedCategory: string='All';
-  selectedLocation: string='All';
+  selectedCategory: string = 'Toate categoriile';
+  selectedLocation: string = 'Toate locațiile';
   categoryControl: FormControl;
   locationControl: FormControl;
 
@@ -65,8 +66,8 @@ export class CautareJobComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.categoryControl = new FormControl('All', Validators.required);
-    this.locationControl = new FormControl('All', Validators.required);
+    this.categoryControl = new FormControl('Toate categoriile', Validators.required);
+    this.locationControl = new FormControl('Toate locațiile', Validators.required);
     this.rezultate = this.anuntService.getJobAnunturi();
   }
 
@@ -86,20 +87,38 @@ export class CautareJobComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog closed');
       if (result.confirmed) {
-        if (result.categorie === 'All') {
+        if (result.categorie === 'Toate categoriile') {
           this.rezultate = this.anuntService.getJobAnunturi();
         } else {
           this.rezultate = this.anuntService.getJobAnunturi().filter(a => a.categorie === result.categorie);
         }
 
-        if (result.locatie != 'All') {
+        if (result.locatie != 'Toate locațiile') {
           this.rezultate = this.rezultate.filter(a => a.locatie === result.locatie);
         }
-        this.selectedCategory=result.categorie;
-        this.selectedLocation=result.locatie;
+        this.selectedCategory = result.categorie;
+        this.selectedLocation = result.locatie;
         console.log(this.rezultate);
       }
     });
 
+  }
+
+  audio() {
+    const dateCautare = new DateCautare(this.selectedCategory, this.selectedLocation, false);
+    const dialogRef = this.dialog.open(AsistentaAudioComponent, {
+      width: '500px',
+      height: '500px',
+      position: { top: '2%', left: '30%' },
+      data: dateCautare
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('dialog closed');
+      if (result.confirmed) {
+        this.selectedCategory = result.categorie;
+        this.selectedLocation = result.locatie;
+      }
+    });
   }
 }

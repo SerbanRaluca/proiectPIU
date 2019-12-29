@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>
+    Asistenta audio
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+        <span aria-hidden="true" class="black-text">&times;</span>
+    </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Categorie</h3>
+            <p>{{data.categorie}}</p>
+        </div>
+        <div class="col-sm-6">
+            <h3>Locatie</h3>
+            <p>{{data.locatie}}</p>
+        </div>
+    </div>
+    <div class="container">
+        <button id="speech" class="btn" (click)="listen()">
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+            <div class="pulse-ring" *ngIf="listening"></div>
+        </button>
+    </div>
+    <p *ngIf="listening" style="text-align: center;">{{message}}</p>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial (click)="confirm()">Continuați</button>
+</div>

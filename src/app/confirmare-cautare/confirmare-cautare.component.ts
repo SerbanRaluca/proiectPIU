@@ -53,7 +53,7 @@ export class ConfirmareCautareComponent implements OnInit {
     console.log(this.markers[1].lat)
     this.latitude=this.markers.find(m=>m.label == this.data.locatie).lat;
     this.longitude=this.markers.find(m=>m.label == this.data.locatie).lng;
-    if(this.data.locatie!='All'){
+    if(this.data.locatie!='Toate locațiile'){
       this.zoom=8;
     }
     console.log(this.latitude);
@@ -68,7 +68,7 @@ export class ConfirmareCautareComponent implements OnInit {
     this.latitude=this.markers[index].lat;
     this.longitude=this.markers[index].lng;
     this.data.locatie=label;
-    if(this.data.locatie!='All'){
+    if(this.data.locatie!='Toate locațiile'){
       this.zoom=8;
     }
   }

@@ -9,13 +9,11 @@
     <div class="row">
         <div class="col-sm-6">
             <h3>Categorie</h3>
-            <p *ngIf="data.categorie!='All'">{{data.categorie}}</p>
-            <p *ngIf="data.categorie=='All'">Toate categoriile</p>
+            <p>{{data.categorie}}</p>
         </div>
         <div class="col-sm-6">
             <h3>Locatie</h3>
-            <p *ngIf="data.locatie!='All'">{{data.locatie}}</p>
-            <p *ngIf="data.locatie=='All'">Toate locatiile</p>
+            <p>{{data.locatie}}</p>
         </div>
     </div>
     <agm-map [latitude]='latitude' 

@@ -20,13 +20,13 @@ export class CautareFreelancerComponent implements OnInit {
 
   rezultate: Anunt[];
 
-  selectedCategory: string = 'All';
-  selectedLocation: string = 'All';
+  selectedCategory: string = 'Toate categoriile';
+  selectedLocation: string = 'Toate locațiile';
   categoryControl: FormControl;
   locationControl: FormControl;
 
   categories: string[] = [
-    'All',
+    'Toate categoriile',
     'Programare',
     'Amenajari interioare',
     'Bucatari',
@@ -35,7 +35,7 @@ export class CautareFreelancerComponent implements OnInit {
   ];
 
   locations: String[] = [
-    'All',
+    'Toate locațiile',
     "Cluj-Napoca",
     "Târgu-Mureș",
     "Sibiu",
@@ -60,8 +60,8 @@ export class CautareFreelancerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.categoryControl = new FormControl('All', Validators.required);
-    this.locationControl = new FormControl('All', Validators.required);
+    this.categoryControl = new FormControl('Toate categoriile', Validators.required);
+    this.locationControl = new FormControl('Toate locațiile', Validators.required);
     this.rezultate = this.anuntService.getFreelanceriAnunturi();
   }
 
@@ -81,13 +81,13 @@ export class CautareFreelancerComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog closed');
       if (result.confirmed) {
-        if (result.categorie === 'All') {
+        if (result.categorie === 'Toate categoriile') {
           this.rezultate = this.anuntService.getFreelanceriAnunturi();
         } else {
           this.rezultate = this.anuntService.getFreelanceriAnunturi().filter(a => a.categorie === result.categorie);
         }
 
-        if (result.locatie != 'All') {
+        if (result.locatie != 'Toate locațiile') {
           this.rezultate = this.rezultate.filter(a => a.locatie === result.locatie);
         }
         this.selectedCategory = result.categorie;

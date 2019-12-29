@@ -34,6 +34,7 @@ import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
 import { ConfirmareCautareComponent } from './confirmare-cautare/confirmare-cautare.component';
 import { AgmCoreModule } from '@agm/core';
+import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.component';
 
 @NgModule({
   declarations: [
@@ -55,13 +56,15 @@ import { AgmCoreModule } from '@agm/core';
     DetaliiFreelancerComponent,
     IncarcareDocumenteComponent,
     DetaliiProfilComponent,
-    ConfirmareCautareComponent
+    ConfirmareCautareComponent,
+    AsistentaAudioComponent
   ],
 
   entryComponents: [
     DetaliiJobComponent,
     DetaliiFreelancerComponent,
-    ConfirmareCautareComponent
+    ConfirmareCautareComponent,
+    AsistentaAudioComponent
   ],
 
   imports: [
