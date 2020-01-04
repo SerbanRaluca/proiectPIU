@@ -9,6 +9,7 @@ export class AnuntJob {
     public salariu: number,
     public aplied: boolean,
     public nivel?: string,
+    public status?: string
   ) {
   }
 }

@@ -1,1 +1,35 @@
-<p>user-contracte works!</p>
+<p class="titlu-contracte"><strong>Contractele mele</strong></p>
+<div class="container">
+    <div *ngIf="rezultateContracte.length>0">
+      <mat-grid-list cols=3 #grid rowHeight="470px">
+        <mat-grid-tile *ngFor="let rezultat of rezultateContracte">
+          <mat-card class="example-card">
+            
+           <img mat-card-image src='../../../assets/images/{{rezultat.logo}}' style="height:200px;width:250px;border: black 1px solid;margin:12px;">
+                    
+            <mat-card-header>
+              <mat-card-title>{{rezultat.titlu}}</mat-card-title>
+              <mat-card-subtitle>{{rezultat.nume}}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content style="margin-left: 15px;">
+              <h4>Locație:</h4>
+              <p>{{rezultat.locatie}}</p>
+              <h4>Status:</h4>
+              <p class="status-contract"><strong>{{rezultat.status}}</strong></p>
+            </mat-card-content>
+
+            <!-- <mat-card-actions style="margin-left: 15px;">
+              <button mat-button class="btn btn-primary" (click)="onDetails(rezultateContracte)">Detalii</button>
+            </mat-card-actions> -->
+
+          </mat-card>
+
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <div *ngIf="rezultateContracte.length==0">
+      <p style="color: tomato;padding-left:120px;padding-top: 50px;">Nu aveti niciun contract!</p>
+    </div>
+</div>
