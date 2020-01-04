@@ -12,14 +12,21 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserContracteComponent } from './user-contracte/user-contracte.component';
 import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/incarcare-documente.component';
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
+import { UserFacebookComponent } from './user-facebook/user-facebook.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path:'profil',component:UserProfileComponent,children:[
+
       {path:'detalii',component:DetaliiProfilComponent},
+
       {path:'documente',component:IncarcareDocumenteComponent}
     ]},
+
+     {path: 'facebook', component: UserFacebookComponent},
+
     {path: 'contracte', component:UserContracteComponent},
+
     {
       path: 'candidat', component: EmployeeComponent, children: [
         {path:' ',redirectTo:'cautare'},
