@@ -28,6 +28,7 @@ import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-
 import { DetaliiJobComponent } from './employee/cautare-job/rezultate-cautare/detalii-job/detalii-job.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserContracteComponent } from './user-contracte/user-contracte.component';
+import { ProfilFacebookComponent } from './user-profile/detalii-profil/profil-facebook/profil-facebook.component'
 import {AdaugareAnuntJobComponent} from './employer/adaugare-anunt-job/adaugare-anunt-job.component';
 import {RezultateCautareFreelanceriComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/rezultate-cautare-freelanceri.component';
 import {DetaliiFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/detalii-freelancer/detalii-freelancer.component';
@@ -53,6 +54,7 @@ import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.compo
     DetaliiJobComponent,
     UserProfileComponent,
     UserContracteComponent,
+    ProfilFacebookComponent,
     AdaugareAnuntJobComponent,
     RezultateCautareFreelanceriComponent,
     DetaliiFreelancerComponent,
