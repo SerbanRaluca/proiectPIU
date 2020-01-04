@@ -35,6 +35,18 @@ export class UserService {
             22,
             'ANGAJATOR',
             new Profil("profil.png",[])
+        ),
+        new User(
+            "Patricia",
+            "Ghitun",
+            "patri@gmail.com",
+            "Patricia Ghitun",
+            "1234",
+            "Cluj Napoca",
+            new Date("09-06-1997"),
+            22,
+            'CANDIDAT',
+            new Profil("profil.png",[])
         )
     ]
 
@@ -55,6 +67,10 @@ export class UserService {
 
         if (sessionStorage.getItem('name') == 'Moldovan Cristian') {
             return this.users[1];
+        }
+
+        if (sessionStorage.getItem('name') == 'Patricia Ghitun') {
+            return this.users[2];
         }
     }
 
