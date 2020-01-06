@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { MatIconModule, MatDialogModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
@@ -35,6 +35,8 @@ import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-pr
 import { ConfirmareCautareComponent } from './confirmare-cautare/confirmare-cautare.component';
 import { AgmCoreModule } from '@agm/core';
 import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.component';
+import {ContracteComponent} from './user-profile/contracte/contracte.component';
+import {ReviewComponent} from "./user-profile/contracte/review/review.component";
 
 @NgModule({
   declarations: [
@@ -57,18 +59,21 @@ import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.compo
     IncarcareDocumenteComponent,
     DetaliiProfilComponent,
     ConfirmareCautareComponent,
-    AsistentaAudioComponent
+    AsistentaAudioComponent,
+    ContracteComponent,
+    ReviewComponent
   ],
 
   entryComponents: [
     DetaliiJobComponent,
+    ReviewComponent,
     DetaliiFreelancerComponent,
     ConfirmareCautareComponent,
     AsistentaAudioComponent
   ],
 
   imports: [
-    BrowserModule, 
+    BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

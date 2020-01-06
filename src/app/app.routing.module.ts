@@ -11,32 +11,33 @@ import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/incarcare-documente.component';
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
+import {ContracteComponent} from './user-profile/contracte/contracte.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
-    {path:'profil',component:UserProfileComponent,children:[
-      {path:'detalii',component:DetaliiProfilComponent},
-      {path:'documente',component:IncarcareDocumenteComponent}
+    {path: 'profil', component: UserProfileComponent, children: [
+      {path: 'detalii', component: DetaliiProfilComponent},
+      {path: 'documente', component: IncarcareDocumenteComponent}
     ]},
-   
+    {path: 'contracte', component: ContracteComponent},
     {
       path: 'candidat', component: EmployeeComponent, children: [
-        {path:' ',redirectTo:'cautare'},
-        {path: 'cautare', component: CautareJobComponent,data: { label: 'Cauta job' } },
-        {path: 'anunt', component: AdaugareAnuntComponent,data: { label: 'Adauga anunt' } }
+        {path: ' ', redirectTo: 'cautare'},
+        {path: 'cautare', component: CautareJobComponent, data: { label: 'Cauta job' } },
+        {path: 'anunt', component: AdaugareAnuntComponent, data: { label: 'Adauga anunt' } }
       ]
     },
     {
       path: 'angajator', component: EmployerComponent, children: [
-        {path: 'cautare', component: CautareFreelancerComponent,data: { label: 'Cauta freelancer' }},
-        {path: 'anunt', component: AdaugareAnuntComponent,data: { label: 'Adauga anunt' }}
+        {path: 'cautare', component: CautareFreelancerComponent, data: { label: 'Cauta freelancer' }},
+        {path: 'anunt', component: AdaugareAnuntComponent, data: { label: 'Adauga anunt' }}
       ]
     },
     {path: 'login', component: LoginComponent},
     {path: 'candidatRegistration', component: RegistrationComponent}
-   
+
   ];
-  
+
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]

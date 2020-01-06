@@ -90,7 +90,18 @@ export class AnuntService {
     'Eu sunt cel pe care il cauti',
     50,
     200,
-    false)];
+    false),
+  new Anunt(
+    'Programator Junior Android',
+    'Simion Marian',
+    'Programare',
+    'Cluj-Napoca',
+    'it.jpg',
+    'Am absolvit facultatea de Calculatoare anula acesta si sunt pregatit pentru o noua provocare',
+    500,
+    1000,
+    false
+  )];
 
 
   constructor(private http: HttpClient) {
