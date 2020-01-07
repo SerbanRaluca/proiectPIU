@@ -1,11 +1,11 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, TemplateRef} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {AnuntJob} from '../../../shared/anuntJob.model';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Review} from '../../../shared/review.model';
 import {ReviewService} from '../../../shared/review.service';
 import {Contracte} from '../../../shared/contracte.model';
-import {Anunt} from "../../../shared/anunt.model";
+import {ToastrService} from 'ngx-toastr';
+import {NgbRatingConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-review',
@@ -15,10 +15,15 @@ import {Anunt} from "../../../shared/anunt.model";
 export class ReviewComponent implements OnInit {
   postForm: FormGroup;
   reviewLista: Review[];
+  toast: any[] = [];
+  currentRate = 1;
 
   constructor(public reviewService: ReviewService,
+              public toastr: ToastrService,
+              config: NgbRatingConfig,
               public dialogRef: MatDialogRef<ReviewComponent>,
               @Inject(MAT_DIALOG_DATA) public data: Contracte) {
+    config.max = 5;
   }
 
   ngOnInit() {
@@ -31,12 +36,17 @@ export class ReviewComponent implements OnInit {
     });
   }
 
+
   onSubmit() {
     console.log(this.postForm.value);
     const numeAngajator = this.postForm.value.numeAngajator;
     const detaliiJob = this.postForm.value.detaliiJob;
     const review = this.postForm.value.review;
-    const reviewObj = new Review(numeAngajator, 'RalucaSerban', detaliiJob, review, 5);
+    this.toastr.success('Review postat cu succes', 'Review Post');
+    const reviewObj = new Review(numeAngajator, 'serban_raluca.JPG',
+      this.data.nume,
+      detaliiJob, review, this.currentRate, new Date(Date.now()));
     this.reviewLista.push(reviewObj);
+    console.log(this.reviewLista);
   }
 }

@@ -7,9 +7,9 @@ import {Contracte} from './contracte.model';
 export class ContracteService {
   contracteLista: Contracte[] = [
     new Contracte(
-      'Programator Junior Android',
-      'Simion Marian',
-      'it.jpg',
+      'Fotograf profesionist',
+      'Ceuca Vlad',
+      'aparatfoto.jpg',
       'Incheiat'
     ),
     new Contracte('Bucatar',

@@ -6,7 +6,7 @@
 <hr>
 <div mat-dialog-content>
   <div class="row">
-    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit() ">
     <div class="form-group">
       <label for="numeAngajator">Nume Angajator</label><br>
       <input type="text" id="numeAngajator" formControlName="numeAngajator"
@@ -23,8 +23,14 @@
       <span *ngIf="!postForm.get('review').valid && postForm.get('review').touched" class="help-block">
                 <span *ngIf="postForm.get('review').errors['required']">Câmp obligatoriu!</span>
             </span>
+      <label> Rating</label><br>
+      <ngb-rating [(rate)]="currentRate">
+        <ng-template let-fill="fill" let-index="index">
+          <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+        </ng-template>
+      </ngb-rating>
     </div>
-      <button type="submit" class="btn btn-success" [disabled]="!postForm.valid">Posteaza review</button>
+      <button type="submit" class="btn btn-success"  [disabled]="!postForm.valid">Posteaza review</button>
     </form>
   </div>
 </div>

@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Contracte} from '../../shared/contracte.model';
 import {ContracteService} from '../../shared/contracte.service';
 import {MatDialog} from '@angular/material/dialog';
-import {DetaliiJobComponent} from "../../employee/cautare-job/rezultate-cautare/detalii-job/detalii-job.component";
-import {JobApplication} from "../../shared/job-application.model";
 import {ReviewComponent} from "./review/review.component";
+import {Review} from "../../shared/review.model";
+import {ReviewService} from "../../shared/review.service";
 
 @Component({
   selector: 'app-contracte',
@@ -14,8 +14,10 @@ import {ReviewComponent} from "./review/review.component";
 export class ContracteComponent implements OnInit {
 
   contracte: Contracte[];
+  review: Review[];
 
-  constructor(public contracteService: ContracteService, public dialog: MatDialog) {
+  constructor(public contracteService: ContracteService, public dialog: MatDialog,
+              public reviewService: ReviewService) {
   }
 
   ngOnInit() {
@@ -31,6 +33,7 @@ export class ContracteComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log(this.reviewService.getReviews());
       console.log('dialog closed');
     });
   }

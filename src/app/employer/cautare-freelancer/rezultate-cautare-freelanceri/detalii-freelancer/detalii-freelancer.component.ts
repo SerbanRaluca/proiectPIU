@@ -2,6 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef, MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Anunt} from '../../../../shared/anunt.model';
+import {Review} from "../../../../shared/review.model";
+import {ReviewService} from "../../../../shared/review.service";
 
 export interface DialogData {
   animal: string;
@@ -14,6 +16,7 @@ export interface DialogData {
   styleUrls: ['./detalii-freelancer.component.css']
 })
 export class DetaliiFreelancerComponent implements OnInit {
+
 
   constructor(public dialogRef: MatDialogRef<DetaliiFreelancerComponent>,
               @Inject(MAT_DIALOG_DATA) public data: Anunt,
@@ -28,6 +31,7 @@ export class DetaliiFreelancerComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

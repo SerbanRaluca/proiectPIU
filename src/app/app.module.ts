@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MatIconModule, MatDialogModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
@@ -36,7 +36,10 @@ import { ConfirmareCautareComponent } from './confirmare-cautare/confirmare-caut
 import { AgmCoreModule } from '@agm/core';
 import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.component';
 import {ContracteComponent} from './user-profile/contracte/contracte.component';
-import {ReviewComponent} from "./user-profile/contracte/review/review.component";
+import {ReviewComponent} from './user-profile/contracte/review/review.component';
+import {ReviewFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/review-freelancer/review-freelancer.component';
+import {ToastrModule} from 'ngx-toastr';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -61,11 +64,13 @@ import {ReviewComponent} from "./user-profile/contracte/review/review.component"
     ConfirmareCautareComponent,
     AsistentaAudioComponent,
     ContracteComponent,
-    ReviewComponent
+    ReviewComponent,
+    ReviewFreelancerComponent
   ],
 
   entryComponents: [
     DetaliiJobComponent,
+    ReviewFreelancerComponent,
     ReviewComponent,
     DetaliiFreelancerComponent,
     ConfirmareCautareComponent,
@@ -76,6 +81,7 @@ import {ReviewComponent} from "./user-profile/contracte/review/review.component"
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -88,6 +94,10 @@ import {ReviewComponent} from "./user-profile/contracte/review/review.component"
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-center'
+    }),
     MatProgressBarModule,
     AgmCoreModule.forRoot({
       // please get your own API key here:
