@@ -59,4 +59,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['contracte']);
   }
 
+  goToJF() {
+    this.router.navigate(['jobFavorit']);
+  }
+
+  goToFF() {
+    this.router.navigate(['freelancerFavorit']);
+  }
+
 }

@@ -15,7 +15,6 @@ import {NgbRatingConfig} from "@ng-bootstrap/ng-bootstrap";
 export class ReviewComponent implements OnInit {
   postForm: FormGroup;
   reviewLista: Review[];
-  toast: any[] = [];
   currentRate = 1;
 
   constructor(public reviewService: ReviewService,

@@ -8,7 +8,7 @@
              style="height:200px;width:250px;border: black 1px solid;margin:12px;">
         <p matLine style="font-size: 20px; margin-bottom: 10px"><b>Nume Freelancer:</b> {{contract.nume}}</p>
         <p style="font-size: 20px" matLine><b>Status:</b> {{contract.status}}</p>
-        <button mat-button *ngIf="contract.status === 'In desfasurare'" class="btn btn-primary">Plătește</button>
+        <button mat-button *ngIf="contract.status === 'In desfasurare'" class="btn btn-primary" (click)="onPlata(contract)">Plătește</button>
         <button mat-button class="btn btn-primary" (click)="onReview(contract)">Lasă un review</button>
         <mat-divider></mat-divider>
       </mat-list-item>

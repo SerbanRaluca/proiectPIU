@@ -34,7 +34,6 @@ export class AdaugareAnuntComponent implements OnInit {
       locatie: new FormControl(null, Validators.required),
       descriere: new FormControl(null),
       'salariu-min': new FormControl(null, Validators.required),
-      'salariu-max': new FormControl(null, Validators.required)
     });
 
     this.categoryControl = new FormControl('Programare', Validators.required);
@@ -50,8 +49,7 @@ export class AdaugareAnuntComponent implements OnInit {
     const locatie = this.postForm.value.locatie;
     const descriere = this.postForm.value.descriere;
     const salariu_min = this.postForm.value['salariu-min'];
-    const salariu_max = this.postForm.value['salariu-max'];
-    const anunt = new Anunt(titlu, nume, categorie, locatie, 'bucatar.jpg', descriere, salariu_min, salariu_max, false);
+    const anunt = new Anunt(titlu, nume, categorie, locatie, 'bucatar.jpg', descriere, salariu_min, false);
     this.rezultate.push(anunt);
   }
 

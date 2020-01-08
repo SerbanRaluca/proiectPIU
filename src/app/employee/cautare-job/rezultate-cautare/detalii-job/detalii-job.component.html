@@ -6,7 +6,7 @@
 </h1>
 <hr>
 <div mat-dialog-content>
-    <div class="row">
+    <div class="row" style="margin-bottom: 15px">
         <div class="col-sm-2" style="margin: 0px;padding: 0px;">
             <img src='../../../assets/images/{{data.logo}}'
                 style="height:80px;width:80px;border: black 1px solid;margin-top:0px;margin-left: 10px;">
@@ -23,6 +23,26 @@
             </h4>
         </div>
     </div>
+
+    <div class="row">
+      <button mat-icon-button color="warn" style="margin-left: 15px;" (click)="toggleSelected()">
+        <mat-icon
+          *ngIf="selected"
+          aria-label="Example icon-button with a heart icon">
+          favorite
+        </mat-icon>
+
+        <mat-icon
+          *ngIf="!selected"
+          aria-label="Example icon-button with a heart icon">
+          favorite_border
+        </mat-icon>
+      </button>
+      <p *ngIf="!selected" style="color: #69AA46; font-size: 20px; display: inline-block; margin-left: 15px">Adăugați la favorite</p>
+      <p *ngIf="selected" style="color: brown; font-size: 20px; display: inline-block; margin-left: 15px;">Stergeți de la favorite</p>
+
+    </div>
+
     <div *ngIf="data.nivel" style="display: inline;align-content: center;">
         <mat-icon svgIcon="briefcase" aria-hidden="false"
             style="width:20px;height:20px; color:cornflowerblue;margin-top: 10px;margin-right:10px;display: inline-block;"></mat-icon>

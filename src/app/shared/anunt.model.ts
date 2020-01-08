@@ -8,8 +8,15 @@ export class Anunt {
     public poza: string,
     public descriere: string,
     public salariu_min: number,
-    public salariu_max: number,
     public applied: boolean
   ) {
+  }
+}
+
+export class FreelancerFavorit {
+  constructor(
+    public frelanceriFav: Anunt[]
+  ) {
+
   }
 }

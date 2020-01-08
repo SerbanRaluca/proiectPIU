@@ -17,6 +17,7 @@ export class AnuntService {
       'Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those ' +
       'terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.',
       3000,
+      false,
       false),
     new AnuntJob(
       'Programare',
@@ -28,6 +29,7 @@ export class AnuntService {
       'terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.',
       4000,
       false,
+      false,
       'Middle (2-5 years), Senior (5-10 years)'),
     new AnuntJob(
       'Programare',
@@ -38,6 +40,7 @@ export class AnuntService {
       'Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those ' +
       'terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.',
       4000,
+      false,
       false),
     new AnuntJob(
       'Programare',
@@ -48,6 +51,7 @@ export class AnuntService {
       'Mobile first. Innovation. Disruption. Continuous optimization. Customer centricity.If you believe those ' +
       'terms define today’s mobile ecosystem, we would like to have you in our team at Banca Transilvania.',
       4000,
+      false,
       false),
     new AnuntJob(
       'Vanzari',
@@ -57,6 +61,7 @@ export class AnuntService {
       'Târgu-Mureș',
       'Intra acum in Lumea Carrefour! E mai mult! E despre oameni!',
       400,
+      false,
       false),
     new AnuntJob(
       'Vanzari',
@@ -66,6 +71,7 @@ export class AnuntService {
       'Sibiu',
       'Intra acum in Lumea Pepco! E mai mult! E despre oameni!',
       400,
+      false,
       false)
   ];
 
@@ -78,31 +84,30 @@ export class AnuntService {
       'bucatar.jpg',
       'Lucrez ca si bucatar de 2 ani de zile. Daca aveti un eveniment la care doriti sa aveti ' +
       'un bucatar cu experienta eu sunt cel pe care il cautati',
-      100,
       300,
       false),
-  new Anunt(
-    'Fotograf profesionist',
-    'Ceuca Vlad',
-    'Fotograf evenimente',
-    'Cluj-Napoca',
-    'aparatfoto.jpg',
-    'Eu sunt cel pe care il cauti',
-    50,
-    200,
-    false),
-  new Anunt(
-    'Programator Junior Android',
-    'Simion Marian',
-    'Programare',
-    'Cluj-Napoca',
-    'it.jpg',
-    'Am absolvit facultatea de Calculatoare anula acesta si sunt pregatit pentru o noua provocare',
-    500,
-    1000,
-    false
-  )];
+    new Anunt(
+      'Fotograf profesionist',
+      'Ceuca Vlad',
+      'Fotograf evenimente',
+      'Cluj-Napoca',
+      'aparatfoto.jpg',
+      'Eu sunt cel pe care il cauti',
+      50,
+      false),
+    new Anunt(
+      'Programator Junior Android',
+      'Moldovan Cristian',
+      'Programare',
+      'Cluj-Napoca',
+      'cristi.jpg',
+      'Am absolvit facultatea de Calculatoare anula acesta si sunt pregatit pentru o noua provocare',
+      500,
+      false
+    )];
 
+  jobFav: AnuntJob[] = [];
+  freelancerFav: Anunt[] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -113,6 +118,14 @@ export class AnuntService {
 
   getJobAnunturi() {
     return this.anunturiJob;
+  }
+
+  getJobFav() {
+    return this.jobFav;
+  }
+
+  getFreelancerFav() {
+    return this.freelancerFav;
   }
 
   saveAnunt(anunt: Anunt) {

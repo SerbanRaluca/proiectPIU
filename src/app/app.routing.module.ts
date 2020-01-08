@@ -12,6 +12,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/incarcare-documente.component';
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
 import {ContracteComponent} from './user-profile/contracte/contracte.component';
+import {JobFavoriteComponent} from './user-profile/job-favorite/job-favorite.component';
+import {FreelanceriFavoritiComponent} from './user-profile/freelanceri-favoriti/freelanceri-favoriti.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
       {path: 'detalii', component: DetaliiProfilComponent},
       {path: 'documente', component: IncarcareDocumenteComponent}
     ]},
+    {path: 'jobFavorit', component: JobFavoriteComponent},
+    {path: 'freelancerFavorit', component: FreelanceriFavoritiComponent},
     {path: 'contracte', component: ContracteComponent},
     {
       path: 'candidat', component: EmployeeComponent, children: [

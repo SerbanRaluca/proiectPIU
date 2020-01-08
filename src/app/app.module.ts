@@ -40,6 +40,10 @@ import {ReviewComponent} from './user-profile/contracte/review/review.component'
 import {ReviewFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/review-freelancer/review-freelancer.component';
 import {ToastrModule} from 'ngx-toastr';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {PlataComponent} from "./user-profile/contracte/plata/plata.component";
+import {JobFavoriteComponent} from "./user-profile/job-favorite/job-favorite.component";
+import {FreelanceriFavoritiComponent} from "./user-profile/freelanceri-favoriti/freelanceri-favoriti.component";
+import {JobFavoriteDetailsComponent} from "./user-profile/job-favorite/job-favorite-details/job-favorite-details.component";
 
 @NgModule({
   declarations: [
@@ -65,13 +69,19 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     AsistentaAudioComponent,
     ContracteComponent,
     ReviewComponent,
-    ReviewFreelancerComponent
+    ReviewFreelancerComponent,
+    PlataComponent,
+    JobFavoriteComponent,
+    FreelanceriFavoritiComponent,
+    JobFavoriteDetailsComponent
   ],
 
   entryComponents: [
     DetaliiJobComponent,
     ReviewFreelancerComponent,
+    JobFavoriteDetailsComponent,
     ReviewComponent,
+    PlataComponent,
     DetaliiFreelancerComponent,
     ConfirmareCautareComponent,
     AsistentaAudioComponent

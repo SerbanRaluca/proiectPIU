@@ -1,0 +1,28 @@
+<h1>Joburi favorite</h1>
+<div class="container">
+  <div *ngIf="jobFav.length>0">
+    <mat-grid-list cols=3 #grid rowHeight="470px">
+      <mat-grid-tile *ngFor="let jobFavorite of jobFav">
+        <mat-card class="example-card">
+          <img mat-card-image src='../../../assets/images/{{jobFavorite.logo}}' style="height:200px;width:250px;border: black 1px solid;margin:12px;">
+          <mat-card-header>
+            <mat-card-title>{{jobFavorite.titlu}}</mat-card-title>
+            <mat-card-subtitle>{{jobFavorite.angajator}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content style="margin-left: 15px;">
+            <h4>Locație:</h4>
+            <p>{{jobFavorite.locatie}}</p>
+          </mat-card-content>
+          <mat-card-actions style="margin-left: 15px;">
+            <button mat-button class="btn btn-primary" (click)="onDetails(jobFavorite)">Detalii</button>
+            <button mat-button class="btn btn-primary" style="margin-left: 15px;" (click)="onDelete(jobFavorite)">Șterge</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div *ngIf="jobFav.length==0">
+    <p style="color: tomato;padding-left:120px;padding-top: 50px;">Ne pare rău!Nu s-a gasit niciun rezultat!</p>
+  </div>
+
+</div>

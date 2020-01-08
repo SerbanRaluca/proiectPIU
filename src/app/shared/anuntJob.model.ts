@@ -8,7 +8,16 @@ export class AnuntJob {
     public descriere: string,
     public salariu: number,
     public aplied: boolean,
+    public favorit: boolean,
     public nivel?: string,
   ) {
+  }
+}
+
+export class JobFavorit {
+  constructor(
+    public jobFav: AnuntJob[]
+  ) {
+
   }
 }

@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Plată online
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+    <span aria-hidden="true" class="white-text">&times;</span>
+  </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+  <div class="row">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit() ">
+      <div class="form-group">
+        <p style="font-size: 23px"><b>Nume beneficiar:</b> {{data.nume}}</p>
+        <p style="font-size: 23px"><b>Cont beneficiar:</b> RO57 BTRL RONC RT0V 0565 0501</p>
+        <label for="suma">Sumă (EUR)</label><br>
+        <input type="text" id="suma" formControlName="suma"
+               class="formControl">
+        <span *ngIf="!postForm.get('suma').valid && postForm.get('suma').touched" class="help-block">
+                <span *ngIf="postForm.get('suma').errors['required']">Câmp obligatoriu!</span>
+            </span>
+
+      </div>
+      <button type="submit" class="btn btn-success"  [disabled]="!postForm.valid">Trimite</button>
+    </form>
+  </div>
+</div>

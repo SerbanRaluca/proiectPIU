@@ -40,7 +40,7 @@ export class AdaugareAnuntJobComponent implements OnInit {
     }
     const descriere = this.postForm.value.descriere;
     const salariu = this.postForm.value.salariu;
-    const anuntJob = new AnuntJob(categorie, angajator, 'bt-logo.jpg', titlu, locatie, descriere, salariu , false);
+    const anuntJob = new AnuntJob(categorie, angajator, 'bt-logo.jpg', titlu, locatie, descriere, salariu , false, false);
     this.rezultate.push(anuntJob);
   }
 
