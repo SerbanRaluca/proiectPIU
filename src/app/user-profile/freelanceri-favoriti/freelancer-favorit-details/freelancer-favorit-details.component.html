@@ -44,34 +44,6 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <button mat-icon-button color="warn" style="margin-left: 15px;" (click)="toggleSelected()">
-      <mat-icon
-        *ngIf="selected"
-        aria-label="Example icon-button with a heart icon">
-        favorite
-      </mat-icon>
-
-      <mat-icon
-        *ngIf="!selected"
-        aria-label="Example icon-button with a heart icon">
-        favorite_border
-      </mat-icon>
-    </button>
-    <p *ngIf="!selected" style="color: #69AA46; font-size: 20px; display: inline-block; margin-left: 15px">Adăugați la favorite</p>
-    <p *ngIf="selected" style="color: brown; font-size: 20px; display: inline-block; margin-left: 15px;">Stergeți de la favorite</p>
-
-  </div>
-
-  <div class="row" style="margin-top: 10px;">
-  <ngb-rating  [(rate)]= sumRating>
-    <ng-template let-fill="fill" let-index="index">
-      <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
-    </ng-template>
-  </ngb-rating>
-    <p *ngIf="index>1 || index == 0" style="display: inline-block; margin-left: 10px">{{index}} Recenzii</p>
-    <p *ngIf="index == 1" style="display: inline-block; margin-left: 10px">{{index}} Recenzie</p>
-  </div>
 
   <h3>Descriere</h3>
   <p>{{data.descriere}}</p>
@@ -82,3 +54,4 @@
   <button class="btn btn-success" [mat-dialog-close]="data" >Contactează</button>
   <button class="btn btn-success" >Trimite formular pentru semnare contract</button>
 </div>
+

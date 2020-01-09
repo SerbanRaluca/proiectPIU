@@ -44,6 +44,7 @@ import {PlataComponent} from "./user-profile/contracte/plata/plata.component";
 import {JobFavoriteComponent} from "./user-profile/job-favorite/job-favorite.component";
 import {FreelanceriFavoritiComponent} from "./user-profile/freelanceri-favoriti/freelanceri-favoriti.component";
 import {JobFavoriteDetailsComponent} from "./user-profile/job-favorite/job-favorite-details/job-favorite-details.component";
+import {FreelancerFavoritDetailsComponent} from "./user-profile/freelanceri-favoriti/freelancer-favorit-details/freelancer-favorit-details.component";
 
 @NgModule({
   declarations: [
@@ -73,13 +74,15 @@ import {JobFavoriteDetailsComponent} from "./user-profile/job-favorite/job-favor
     PlataComponent,
     JobFavoriteComponent,
     FreelanceriFavoritiComponent,
-    JobFavoriteDetailsComponent
+    JobFavoriteDetailsComponent,
+    FreelancerFavoritDetailsComponent
   ],
 
   entryComponents: [
     DetaliiJobComponent,
     ReviewFreelancerComponent,
     JobFavoriteDetailsComponent,
+    FreelancerFavoritDetailsComponent,
     ReviewComponent,
     PlataComponent,
     DetaliiFreelancerComponent,

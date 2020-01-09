@@ -14,6 +14,7 @@ import {ToastrService} from 'ngx-toastr';
 export class JobFavoriteComponent implements OnInit {
   jobFav: AnuntJob[];
   jobAnunt: AnuntJob[];
+  anunt: AnuntJob;
 
   constructor(public toastr: ToastrService,
               public anuntService: AnuntService,
@@ -22,6 +23,7 @@ export class JobFavoriteComponent implements OnInit {
 
   ngOnInit() {
     this.jobFav = this.anuntService.jobFav;
+    this.jobAnunt = this.anuntService.getJobAnunturi();
   }
 
   onDetails(rez: AnuntJob) {
@@ -38,11 +40,13 @@ export class JobFavoriteComponent implements OnInit {
   }
 
   onDelete(anunt: AnuntJob) {
-    anunt.favorit = false;
-    this.jobFav = this.jobFav.filter(i => i.favorit === true);
-    this.jobAnunt = this.anuntService.getJobAnunturi();
+    const index = this.jobFav.indexOf(anunt);
+    this.anunt = this.jobAnunt.find(x => x.titlu === anunt.titlu);
+    this.anunt.favorit = false;
+    this.jobFav.splice(index, 1);
     this.toastr.warning('Job șters de la favorite', 'Ștergere de la favorite');
     console.log(this.jobFav);
+    console.log(this.jobAnunt);
   }
 
 }

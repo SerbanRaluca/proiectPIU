@@ -85,6 +85,7 @@ export class AnuntService {
       'Lucrez ca si bucatar de 2 ani de zile. Daca aveti un eveniment la care doriti sa aveti ' +
       'un bucatar cu experienta eu sunt cel pe care il cautati',
       300,
+      false,
       false),
     new Anunt(
       'Fotograf profesionist',
@@ -94,6 +95,7 @@ export class AnuntService {
       'aparatfoto.jpg',
       'Eu sunt cel pe care il cauti',
       50,
+      false,
       false),
     new Anunt(
       'Programator Junior Android',
@@ -103,6 +105,7 @@ export class AnuntService {
       'cristi.jpg',
       'Am absolvit facultatea de Calculatoare anula acesta si sunt pregatit pentru o noua provocare',
       500,
+      false,
       false
     )];
 

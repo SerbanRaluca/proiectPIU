@@ -49,7 +49,7 @@ export class AdaugareAnuntComponent implements OnInit {
     const locatie = this.postForm.value.locatie;
     const descriere = this.postForm.value.descriere;
     const salariu_min = this.postForm.value['salariu-min'];
-    const anunt = new Anunt(titlu, nume, categorie, locatie, 'bucatar.jpg', descriere, salariu_min, false);
+    const anunt = new Anunt(titlu, nume, categorie, locatie, 'bucatar.jpg', descriere, salariu_min, false, false);
     this.rezultate.push(anunt);
   }
 

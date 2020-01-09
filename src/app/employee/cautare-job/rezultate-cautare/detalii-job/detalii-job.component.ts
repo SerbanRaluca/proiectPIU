@@ -57,7 +57,8 @@ export class DetaliiJobComponent implements OnInit {
     if (!this.selected) {
       this.toastr.warning('Job șters de la favorite', 'Ștergere de la favorite');
       this.data.favorit = false;
-      this.jobFav = this.jobFav.filter(i => i.titlu !== this.data.titlu);
+      const index = this.jobFav.indexOf(this.data);
+      this.jobFav.splice(index, 1);
       console.log(this.jobFav);
     }
   }

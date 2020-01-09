@@ -4,6 +4,7 @@ import {Anunt} from '../../../shared/anunt.model';
 import {MatDialog} from '@angular/material';
 import {DetaliiFreelancerComponent} from './detalii-freelancer/detalii-freelancer.component';
 import {ReviewFreelancerComponent} from "./review-freelancer/review-freelancer.component";
+import {Review} from "../../../shared/review.model";
 
 @Component({
   selector: 'app-rezultate-cautare-freelanceri',
@@ -26,7 +27,7 @@ export class RezultateCautareFreelanceriComponent implements OnInit {
   onDetails(rez: Anunt) {
     const dialogRef = this.dialog.open(DetaliiFreelancerComponent, {
       width: '800px',
-      height: '500px',
+      height: '600px',
       position: {top: '2%', left: '30%'},
       data: rez
     });
