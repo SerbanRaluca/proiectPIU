@@ -34,7 +34,7 @@ import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
 import { ConfirmareCautareComponent } from './confirmare-cautare/confirmare-cautare.component';
 import { AgmCoreModule } from '@agm/core';
-import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.component';
+import { AsistentaAudioComponent } from './asistenta-audio/asistenta-audio.component';
 import {ContracteComponent} from './user-profile/contracte/contracte.component';
 import {ReviewComponent} from './user-profile/contracte/review/review.component';
 import {ReviewFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/review-freelancer/review-freelancer.component';
@@ -45,6 +45,7 @@ import {JobFavoriteComponent} from "./user-profile/job-favorite/job-favorite.com
 import {FreelanceriFavoritiComponent} from "./user-profile/freelanceri-favoriti/freelanceri-favoriti.component";
 import {JobFavoriteDetailsComponent} from "./user-profile/job-favorite/job-favorite-details/job-favorite-details.component";
 import {FreelancerFavoritDetailsComponent} from "./user-profile/freelanceri-favoriti/freelancer-favorit-details/freelancer-favorit-details.component";
+import { MesajInformareComponent } from './mesaj-informare/mesaj-informare.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import {FreelancerFavoritDetailsComponent} from "./user-profile/freelanceri-favo
     JobFavoriteComponent,
     FreelanceriFavoritiComponent,
     JobFavoriteDetailsComponent,
-    FreelancerFavoritDetailsComponent
+    FreelancerFavoritDetailsComponent,
+    MesajInformareComponent
   ],
 
   entryComponents: [
@@ -87,7 +89,8 @@ import {FreelancerFavoritDetailsComponent} from "./user-profile/freelanceri-favo
     PlataComponent,
     DetaliiFreelancerComponent,
     ConfirmareCautareComponent,
-    AsistentaAudioComponent
+    AsistentaAudioComponent,
+    MesajInformareComponent
   ],
 
   imports: [

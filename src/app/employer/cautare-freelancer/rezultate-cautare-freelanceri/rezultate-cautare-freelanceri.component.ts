@@ -45,7 +45,7 @@ export class RezultateCautareFreelanceriComponent implements OnInit {
   onReviews(rez: Anunt) {
     const dialogRef = this.dialog.open(ReviewFreelancerComponent, {
       width: '700px',
-      height: '700px',
+      height: '500px',
       position: {top: '2%', left: '30%'},
       data: rez
     });

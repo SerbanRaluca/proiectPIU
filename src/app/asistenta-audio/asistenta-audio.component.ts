@@ -3,9 +3,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DateCautare } from '../shared/dateCautare.model';
 
 @Component({
-  selector: 'app-asisienta-audio',
-  templateUrl: './asisienta-audio.component.html',
-  styleUrls: ['./asisienta-audio.component.css']
+  selector: 'app-asistenta-audio',
+  templateUrl: './asistenta-audio.component.html',
+  styleUrls: ['./asistenta-audio.component.css']
 })
 export class AsistentaAudioComponent implements OnInit {
 

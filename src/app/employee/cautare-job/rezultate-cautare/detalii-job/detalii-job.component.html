@@ -54,5 +54,5 @@
     <p>{{data.salariu}} EURO</p>
 </div>
 <div mat-dialog-actions>
-    <button class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial>Aplica acum!</button>
+    <button class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial (click)="aplica()">Aplica acum!</button>
 </div>

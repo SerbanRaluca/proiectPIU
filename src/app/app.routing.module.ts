@@ -14,6 +14,7 @@ import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-pr
 import {ContracteComponent} from './user-profile/contracte/contracte.component';
 import {JobFavoriteComponent} from './user-profile/job-favorite/job-favorite.component';
 import {FreelanceriFavoritiComponent} from './user-profile/freelanceri-favoriti/freelanceri-favoriti.component';
+import { AdaugareAnuntJobComponent } from './employer/adaugare-anunt-job/adaugare-anunt-job.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
     {
       path: 'angajator', component: EmployerComponent, children: [
         {path: 'cautare', component: CautareFreelancerComponent, data: { label: 'Cauta freelancer' }},
-        {path: 'anunt', component: AdaugareAnuntComponent, data: { label: 'Adauga anunt' }}
+        {path: 'anunt', component: AdaugareAnuntJobComponent, data: { label: 'Adauga anunt' }}
       ]
     },
     {path: 'login', component: LoginComponent},

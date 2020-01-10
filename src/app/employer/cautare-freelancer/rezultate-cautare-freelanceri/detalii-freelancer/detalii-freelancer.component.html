@@ -79,6 +79,6 @@
   <p>MIN:{{data.salariu_min}} EURO</p>
 </div>
 <div mat-dialog-actions>
-  <button class="btn btn-success" [mat-dialog-close]="data" >Contactează</button>
+  <button class="btn btn-success" [mat-dialog-close]="data" (click)="contacteaza()">Contactează</button>
   <button class="btn btn-success" >Trimite formular pentru semnare contract</button>
 </div>
