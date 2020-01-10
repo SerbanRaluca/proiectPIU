@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AnuntJob} from '../../shared/anuntJob.model';
 import {AnuntService} from '../../shared/anunt.service';
+import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-adaugare-anunt-job',
@@ -13,7 +15,7 @@ export class AdaugareAnuntJobComponent implements OnInit {
 
   rezultate: AnuntJob[];
 
-  constructor(private anuntService: AnuntService) {
+  constructor(private anuntService: AnuntService,private dialog:MatDialog) {
   }
 
   ngOnInit() {
@@ -35,13 +37,24 @@ export class AdaugareAnuntJobComponent implements OnInit {
     const angajator = this.postForm.value.angajator;
     const locatie = this.postForm.value.locatie;
     const categorie = this.postForm.value.categorie;
-    if (this.postForm.value.nivel != null) {
-      const nivel = this.postForm.value.nivel;
-    }
     const descriere = this.postForm.value.descriere;
     const salariu = this.postForm.value.salariu;
-    const anuntJob = new AnuntJob(categorie, angajator, 'bt-logo.jpg', titlu, locatie, descriere, salariu , false, false);
-    this.rezultate.push(anuntJob);
+    if (this.postForm.value.nivel != null) {
+      const nivel = this.postForm.value.nivel;
+      const anuntJob = new AnuntJob(categorie, angajator, 'angular.jfif', titlu, locatie, descriere, salariu , false, false,nivel);
+      this.rezultate.push(anuntJob);
+    }else{
+      const anuntJob = new AnuntJob(categorie, angajator, 'angular.jfif', titlu, locatie, descriere, salariu , false, false);
+      this.rezultate.push(anuntJob);
+    }
+    this.postForm.reset();
+    this.dialog.open(MesajInformareComponent, {
+      width: '400px',
+      height: '300px',
+      position: { top: '2%', left: '30%' },
+      data:'Anunțul a fost postat cu succes!'
+    });
+   
   }
 
 }

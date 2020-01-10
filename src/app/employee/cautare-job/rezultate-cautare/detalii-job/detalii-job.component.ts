@@ -63,4 +63,8 @@ export class DetaliiJobComponent implements OnInit {
     }
   }
 
+  aplica(){
+    this.data.aplied=true;
+  }
+
 }

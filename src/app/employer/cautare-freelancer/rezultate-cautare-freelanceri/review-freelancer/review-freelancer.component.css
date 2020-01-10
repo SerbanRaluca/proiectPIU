@@ -7,6 +7,7 @@
 .star {
   font-size: 2.0rem;
   color: #b0c4de;
+  display: inline-block;
 }
 .filled {
   color: #FFD700;

@@ -3,6 +3,8 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Anunt} from 'src/app/shared/anunt.model';
 import {AnuntService} from 'src/app/shared/anunt.service';
 import {AnuntJob} from '../../shared/anuntJob.model';
+import { MatDialog } from '@angular/material';
+import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
 
 @Component({
   selector: 'app-adaugare-anunt',
@@ -21,10 +23,10 @@ export class AdaugareAnuntComponent implements OnInit {
     'Amenajari interioare',
     'Bucatari',
     'Fotograf evenimente',
-    'Organizator petreceri'
+    'Organizator evenimente'
   ];
 
-  constructor(private service: AnuntService) {
+  constructor(private service: AnuntService,private dialog:MatDialog) {
   }
 
   ngOnInit() {
@@ -49,8 +51,15 @@ export class AdaugareAnuntComponent implements OnInit {
     const locatie = this.postForm.value.locatie;
     const descriere = this.postForm.value.descriere;
     const salariu_min = this.postForm.value['salariu-min'];
-    const anunt = new Anunt(titlu, nume, categorie, locatie, 'bucatar.jpg', descriere, salariu_min, false, false);
+    const anunt = new Anunt(titlu, nume, categorie, locatie, 'petreceri.jpg', descriere, salariu_min, false, false);
     this.rezultate.push(anunt);
+    this.postForm.reset();
+    this.dialog.open(MesajInformareComponent, {
+      width: '400px',
+      height: '300px',
+      position: { top: '2%', left: '30%' },
+      data:'Anunțul a fost postat cu succes!'
+    });
   }
 
 }
