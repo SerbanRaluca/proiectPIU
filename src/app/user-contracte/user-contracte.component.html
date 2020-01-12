@@ -1,11 +1,11 @@
-<p class="titlu-contracte"><strong>Contractele mele</strong></p>
+<p class="titlu-contracte"><strong>Ati aplicat la urmatoarele joburi:</strong></p>
 <div class="container">
     <div *ngIf="rezultateContracte.length>0">
       <mat-grid-list cols=3 #grid rowHeight="470px">
         <mat-grid-tile *ngFor="let rezultat of rezultateContracte">
           <mat-card class="example-card">
             
-           <img mat-card-image src='../../../assets/images/{{rezultat.logo}}' style="height:200px;width:250px;border: black 1px solid;margin:12px;">
+           <img mat-card-image src='../../../assets/images/{{rezultat.logo}}' style="height:200px;width:300px;border: black 1px solid;margin:12px;">
                     
             <mat-card-header>
               <mat-card-title>{{rezultat.titlu}}</mat-card-title>

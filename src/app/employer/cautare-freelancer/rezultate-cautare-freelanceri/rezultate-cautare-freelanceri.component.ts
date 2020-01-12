@@ -4,7 +4,6 @@ import {Anunt} from '../../../shared/anunt.model';
 import {MatDialog} from '@angular/material';
 import {DetaliiFreelancerComponent} from './detalii-freelancer/detalii-freelancer.component';
 import {ReviewFreelancerComponent} from "./review-freelancer/review-freelancer.component";
-import {Review} from "../../../shared/review.model";
 
 @Component({
   selector: 'app-rezultate-cautare-freelanceri',

@@ -48,6 +48,8 @@ import {FreelanceriFavoritiComponent} from "./user-profile/freelanceri-favoriti/
 import {JobFavoriteDetailsComponent} from "./user-profile/job-favorite/job-favorite-details/job-favorite-details.component";
 import {FreelancerFavoritDetailsComponent} from "./user-profile/freelanceri-favoriti/freelancer-favorit-details/freelancer-favorit-details.component";
 import { MesajInformareComponent } from './mesaj-informare/mesaj-informare.component';
+import { ChatComponent } from './chat/chat.component';
+
 
 @NgModule({
   declarations: [
@@ -81,7 +83,8 @@ import { MesajInformareComponent } from './mesaj-informare/mesaj-informare.compo
     FreelanceriFavoritiComponent,
     JobFavoriteDetailsComponent,
     FreelancerFavoritDetailsComponent,
-    MesajInformareComponent
+    MesajInformareComponent,
+    ChatComponent
   ],
 
   entryComponents: [
@@ -94,7 +97,8 @@ import { MesajInformareComponent } from './mesaj-informare/mesaj-informare.compo
     DetaliiFreelancerComponent,
     ConfirmareCautareComponent,
     AsistentaAudioComponent,
-    MesajInformareComponent
+    MesajInformareComponent,
+    ChatComponent
   ],
 
   imports: [

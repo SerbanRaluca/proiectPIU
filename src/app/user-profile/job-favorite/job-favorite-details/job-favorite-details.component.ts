@@ -28,4 +28,8 @@ export class JobFavoriteDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  aplica(){
+    this.data.aplied=true;
+  }
+
 }

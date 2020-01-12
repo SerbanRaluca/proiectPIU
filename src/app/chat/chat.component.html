@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>
+    <img src='../../../assets/images/{{data.poza}}'>{{data.nume}}
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+        <span aria-hidden="true" class="black-text">&times;</span>
+    </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+    <div class="chat">
+        <div class="messages">
+            <div class="row" *ngFor="let m of messages" >
+              <div *ngIf="m.sender" class="message" style="background-color: cadetblue;float:right">
+                  <p>{{m.message}}</p>
+              </div>
+              <div *ngIf="!m.sender" class="message" style="background-color:burlywood;">
+                <p>{{m.message}}</p>
+            </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <form [formGroup]="messageForm" (ngSubmit)="send()">
+            <div class="msg">
+                <textarea class="formControl" formControlName="message" placeholder="Scrie un mesaj..." rows="3" cols="30" name="message"></textarea>
+                <button class="btn btn-primary">SEND</button>
+            </div>
+        </form>
+    </div>
+    
+</div>

@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AnuntJob } from 'src/app/shared/anuntJob.model';
 import { MatDialog } from '@angular/material';
 import { DetaliiJobComponent } from './detalii-job/detalii-job.component';
-import { JobApplication } from 'src/app/shared/job-application.model';
 import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
+import { StatusService } from 'src/app/shared/statusService';
 
 @Component({
   selector: 'app-rezultate-cautare',
@@ -12,11 +12,9 @@ import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare
 })
 export class RezultateCautareComponent implements OnInit {
 
-  applications: JobApplication[] = [];
-
   @Input() rezultate: AnuntJob[];
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog,public statusService:StatusService) {
   }
 
   ngOnInit() {
@@ -41,10 +39,9 @@ export class RezultateCautareComponent implements OnInit {
           position: { top: '2%', left: '30%' },
           data: 'Ați aplicat cu succes! Accesați secțiunea de STATUS pentru mai multe detalii!'
         });
+        result.status='TRIMIS';
+        this.statusService.addStatusContracte(result);
       }
-      this.applications.push(new JobApplication(result, 'applied'));
-      sessionStorage.setItem('job-applications', JSON.stringify(this.applications));
-      console.log(this.applications);
     });
   }
 }

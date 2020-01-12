@@ -5,6 +5,8 @@ import {DetaliiJobComponent} from '../../employee/cautare-job/rezultate-cautare/
 import {MatDialog} from '@angular/material/dialog';
 import {JobFavoriteDetailsComponent} from './job-favorite-details/job-favorite-details.component';
 import {ToastrService} from 'ngx-toastr';
+import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
+import { StatusService } from 'src/app/shared/statusService';
 
 @Component({
   selector: 'app-job-favorite',
@@ -18,6 +20,7 @@ export class JobFavoriteComponent implements OnInit {
 
   constructor(public toastr: ToastrService,
               public anuntService: AnuntService,
+              public statusService:StatusService,
               public dialog: MatDialog) {
   }
 
@@ -36,6 +39,17 @@ export class JobFavoriteComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog closed');
+      console.log(sessionStorage.getItem('name'));
+      if (result.aplied) {
+        this.dialog.open(MesajInformareComponent, {
+          width: '400px',
+          height: '300px',
+          position: { top: '2%', left: '30%' },
+          data: 'Ați aplicat cu succes! Accesați secțiunea de STATUS pentru mai multe detalii!'
+        });
+        result.status='TRIMIS';
+        this.statusService.addStatusContracte(result);
+      }
     });
   }
 
