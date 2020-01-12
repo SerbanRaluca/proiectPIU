@@ -4,6 +4,9 @@ import {AnuntJob} from 'src/app/shared/anuntJob.model';
 import {DomSanitizer} from '@angular/platform-browser';
 import {AnuntService} from '../../../../shared/anunt.service';
 import {ToastrService} from 'ngx-toastr';
+import {Review, ReviewJob} from "../../../../shared/review.model";
+import {NgbRatingConfig} from "@ng-bootstrap/ng-bootstrap";
+import {ReviewService} from "../../../../shared/review.service";
 
 
 export interface DialogData {
@@ -20,9 +23,14 @@ export class DetaliiJobComponent implements OnInit {
   @Input() selected: boolean;
   @Output() selectedChange = new EventEmitter<boolean>();
   jobFav: AnuntJob[];
+  reviews: ReviewJob[];
+  sumRating = 0;
+  index = 0;
 
   constructor(
     public toastr: ToastrService,
+    config: NgbRatingConfig,
+    public reviewService: ReviewService,
     public anuntService: AnuntService,
     public dialogRef: MatDialogRef<DetaliiJobComponent>,
     @Inject(MAT_DIALOG_DATA) public data: AnuntJob,
@@ -34,10 +42,19 @@ export class DetaliiJobComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'briefcase',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/briefcase.svg'));
+    config.max = 5;
+    config.readonly = true;
   }
 
   ngOnInit() {
     this.jobFav = this.anuntService.jobFav;
+    this.selected = this.data.favorit;
+    this.reviews = this.reviewService.getReviewsJob().filter(a => a.numeJob === this.data.angajator);
+    this.reviews.forEach( review => {
+      this.sumRating = this.sumRating + review.rating;
+      this.index = this.index + 1;
+    });
+    this.sumRating = this.sumRating / this.index;
     this.selected = this.data.favorit;
     console.log(this.data);
   }

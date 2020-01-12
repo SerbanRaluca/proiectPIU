@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Recenzii
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+    <span aria-hidden="true" class="white-text">&times;</span>
+  </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+  <div class="row">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit() ">
+      <div class="form-group">
+        <label for="numeAngajator">Nume Angajat</label><br>
+        <input type="text" id="numeAngajator" formControlName="numeAngajator"
+               class="formControl">
+        <span *ngIf="!postForm.get('numeAngajator').valid && postForm.get('numeAngajator').touched" class="help-block">
+                <span *ngIf="postForm.get('numeAngajator').errors['required']">Câmp obligatoriu!</span>
+            </span>
+
+        <label for="detaliiJob">Detalii Job</label><br>
+        <textarea rows="5" id="detaliiJob" class="form-control"></textarea>
+
+        <label for="review">Lasă un review aici</label><br>
+        <textarea rows="5" id="review" formControlName="review" class="formControl"></textarea>
+        <span *ngIf="!postForm.get('review').valid && postForm.get('review').touched" class="help-block">
+                <span *ngIf="postForm.get('review').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        <label> Rating</label><br>
+        <ngb-rating [(rate)]="currentRate">
+          <ng-template let-fill="fill" let-index="index">
+            <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+          </ng-template>
+        </ngb-rating>
+      </div>
+      <button type="submit" class="btn btn-success"  [disabled]="!postForm.valid">Postează review</button>
+    </form>
+  </div>
+</div>

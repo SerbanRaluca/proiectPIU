@@ -43,6 +43,16 @@
 
     </div>
 
+  <div class="row" style="margin-top: 10px;">
+    <ngb-rating  [(rate)]= sumRating>
+      <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <p *ngIf="index>1 || index == 0" style="display: inline-block; margin-left: 10px">{{index}} Recenzii</p>
+    <p *ngIf="index == 1" style="display: inline-block; margin-left: 10px">{{index}} Recenzie</p>
+  </div>
+
     <div *ngIf="data.nivel" style="display: inline;align-content: center;">
         <mat-icon svgIcon="briefcase" aria-hidden="false"
             style="width:20px;height:20px; color:cornflowerblue;margin-top: 10px;margin-right:10px;display: inline-block;"></mat-icon>

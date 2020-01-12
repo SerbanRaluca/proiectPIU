@@ -4,6 +4,9 @@ import { MatDialog } from '@angular/material';
 import { DetaliiJobComponent } from './detalii-job/detalii-job.component';
 import { JobApplication } from 'src/app/shared/job-application.model';
 import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
+import {Anunt} from "../../../shared/anunt.model";
+import {ReviewFreelancerComponent} from "../../../employer/cautare-freelancer/rezultate-cautare-freelanceri/review-freelancer/review-freelancer.component";
+import {ReviewJobsComponent} from "./review-jobs/review-jobs.component";
 
 @Component({
   selector: 'app-rezultate-cautare',
@@ -46,5 +49,20 @@ export class RezultateCautareComponent implements OnInit {
       sessionStorage.setItem('job-applications', JSON.stringify(this.applications));
       console.log(this.applications);
     });
+  }
+
+  onReviews(rez: AnuntJob) {
+    const dialogRef = this.dialog.open(ReviewJobsComponent, {
+      width: '700px',
+      height: '500px',
+      position: {top: '2%', left: '30%'},
+      data: rez
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('dialog closed');
+      console.log(sessionStorage.getItem('name'));
+    });
+
   }
 }

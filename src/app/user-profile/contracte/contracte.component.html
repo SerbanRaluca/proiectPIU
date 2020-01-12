@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Contracte</h1>
+  <h1>Contracte ca si angajator</h1>
   <div *ngIf="contracte.length>0">
     <mat-list>
       <mat-list-item style="height: auto" *ngFor="let contract of contracte">
@@ -16,6 +16,27 @@
   </div>
 
   <div *ngIf="contracte.length==0">
-    <p style="color: tomato;padding-left:120px;padding-top: 50px;">Ne pare rău!Nu s-a gasit niciun contract!</p>
+    <p style="color: tomato;padding-left:120px;padding-top: 50px;">Ne pare rău!Nu s-a gasit niciun contract de angajator!</p>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Contracte ca si angajat</h1>
+  <div *ngIf="contracte.length>0">
+    <mat-list>
+      <mat-list-item style="height: auto" *ngFor="let contract of contracteJob">
+        <p  matLine style="font-size: 40px; margin-bottom: 30px">{{contract.titlu}}</p>
+        <img mat-list-avatar src='../../../assets/images/{{contract.poza}}'
+             style="height:200px;width:250px;border: black 1px solid;margin:12px;">
+        <p matLine style="font-size: 20px; margin-bottom: 10px"><b>Nume Freelancer:</b> {{contract.nume}}</p>
+        <p style="font-size: 20px" matLine><b>Status:</b> {{contract.status}}</p>
+        <button mat-button class="btn btn-primary" (click)="onReviewJob(contract)">Lasă un review</button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div *ngIf="contracte.length==0">
+    <p style="color: tomato;padding-left:120px;padding-top: 50px;">Ne pare rău!Nu s-a gasit niciun contract de angajat!</p>
   </div>
 </div>

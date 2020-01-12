@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Recenzii
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+      <span aria-hidden="true" class="white-text">&times;</span>
+    </button>
+  </h1>
+  <div *ngIf="reviews.length>0">
+    <mat-list>
+      <mat-list-item style="height: auto" *ngFor="let review of reviews">
+        <img mat-list-avatar src='../../../assets/images/{{review.pozaAngajat}}'
+             style="height:70px;width:75px;border: black 1px solid;margin:12px;">
+        <p  matLine style="font-size: 15px">{{review.numeAngajat}}</p>
+        <p matLine style="font-size: 10px; margin-bottom: 8px">{{review.date | date:'dd MMMM yyyy'}}</p>
+        <p style="font-size: 13px" matLine>{{review.review}}</p>
+        <ngb-rating  [(rate)]= review.rating style="width:150px;height:50px">
+          <ng-template let-fill="fill" let-index="index">
+            <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+          </ng-template>
+        </ngb-rating>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div *ngIf="reviews.length==0">
+    <p style="color: tomato;padding-left:120px;padding-top: 50px;">Angajatorul nu are niciun review!</p>
+  </div>
+</div>
