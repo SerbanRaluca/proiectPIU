@@ -11,3 +11,17 @@ export class Review {
   ) {
   }
 }
+
+export class ReviewJob {
+
+  constructor(
+    public numeAngajat: string,
+    public pozaAngajat: string,
+    public numeJob: string,
+    public detaliiJob: string,
+    public review: string,
+    public rating: number,
+    public date: Date
+  ) {
+  }
+}

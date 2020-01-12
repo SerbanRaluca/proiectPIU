@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Review} from './review.model';
+import {Review, ReviewJob} from './review.model';
 
 @Injectable({
   providedIn: 'root'
@@ -44,10 +44,26 @@ export class ReviewService {
     )
   ];
 
+  reviewJob: ReviewJob[] = [
+    new ReviewJob(
+      'Moldovan Cristian',
+      'cristi.jpg',
+      'Banca Transilvania',
+      'Programator full time Android',
+      'Firma serioasa',
+      4,
+      new Date('12 July 2019')
+    )
+  ]
+
   constructor() {
   }
 
   getReviews() {
     return this.reviewLista;
+  }
+
+  getReviewsJob() {
+    return this.reviewJob;
   }
 }

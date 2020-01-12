@@ -4,6 +4,9 @@ import { MatDialog } from '@angular/material';
 import { DetaliiJobComponent } from './detalii-job/detalii-job.component';
 import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
 import { StatusService } from 'src/app/shared/statusService';
+import {Anunt} from "../../../shared/anunt.model";
+import {ReviewFreelancerComponent} from "../../../employer/cautare-freelancer/rezultate-cautare-freelanceri/review-freelancer/review-freelancer.component";
+import {ReviewJobsComponent} from "./review-jobs/review-jobs.component";
 
 @Component({
   selector: 'app-rezultate-cautare',
@@ -43,5 +46,20 @@ export class RezultateCautareComponent implements OnInit {
         this.statusService.addStatusContracte(result);
       }
     });
+  }
+
+  onReviews(rez: AnuntJob) {
+    const dialogRef = this.dialog.open(ReviewJobsComponent, {
+      width: '700px',
+      height: '500px',
+      position: {top: '2%', left: '30%'},
+      data: rez
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('dialog closed');
+      console.log(sessionStorage.getItem('name'));
+    });
+
   }
 }

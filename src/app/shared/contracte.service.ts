@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Contracte} from './contracte.model';
+import {Contracte, ContracteJob} from './contracte.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,29 @@ export class ContracteService {
       'In desfasurare')
   ];
 
+  contracteJob: ContracteJob[] = [
+    new Contracte(
+      'Senior Android Developer',
+      'Banca Transilvania',
+      'bt-logo.jpg',
+      'In desfasurare'
+    ),
+    new Contracte(
+      'Mid/ Senior QA Automation Engineer',
+      'Banca Transilvania',
+      'bt-logo.jpg',
+      'Incheiat'
+    )
+  ];
+
   constructor() {
   }
 
   getContracteLista() {
     return this.contracteLista;
+  }
+
+  getContracteJob(){
+    return this.contracteJob;
   }
 }
