@@ -78,8 +78,9 @@
                             <i class="middle ace-icon fa fa-facebook-square bigger-150 blue"></i>
                         </div>
 
-                        <div class="profile-info-value">
-                            <a>Profil Facebook</a>
+                        <div class="profile-info-value" routerLinkActive="active">
+                            <!-- <a routerLink="profilFacebook" target="_blank">Profil Facebook</a> -->
+                            <a href="https://www.facebook.com/profile.php?id=100008722320145" target="_blank">Profil Facebook</a>
                         </div>
                     </div>
 
@@ -89,11 +90,12 @@
                         </div>
 
                         <div class="profile-info-value">
-                            <a>LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/serban-raluca-0b436a149/" target="_blank">LinkedIn</a>
                         </div>
                     </div>
                 </div>
             </div><!-- /.col -->
+            <router-outlet></router-outlet>
         </div><!-- /.row -->
 
         <div class="space-20"></div>

@@ -38,6 +38,18 @@ export class ConfirmareCautareComponent implements OnInit {
 		  lng: 24.5611947,
       label: 'Târgu-Mureș',
       draggable:false
+     },
+     {
+      lat: 45.6580,
+		  lng: 25.6012,
+      label: 'Brașov',
+      draggable:false
+     },
+     {
+      lat: 44.4268,
+		  lng: 26.1025,
+      label: 'București',
+      draggable:false
      }
   ]
 

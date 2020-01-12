@@ -39,5 +39,10 @@ export class LoginComponent implements OnInit {
       this.userService.setUser('Raluca Serban');
       this.router.navigate(['']); 
     }
+
+    if (email === 'patri@gmail.com' && parola === '1234') {
+      this.userService.setUser('Patricia Ghitun');
+      this.router.navigate(['']); 
+    }
   }
 }

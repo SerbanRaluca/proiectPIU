@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef, MatIconRegistry} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef, MatIconRegistry, MatDialog} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Anunt} from '../../../../shared/anunt.model';
 import {ToastrService} from 'ngx-toastr';
@@ -7,6 +7,7 @@ import {AnuntService} from '../../../../shared/anunt.service';
 import {Review} from '../../../../shared/review.model';
 import {ReviewService} from '../../../../shared/review.service';
 import {NgbRatingConfig} from "@ng-bootstrap/ng-bootstrap";
+import { ChatComponent } from 'src/app/chat/chat.component';
 
 export interface DialogData {
   animal: string;
@@ -31,9 +32,9 @@ export class DetaliiFreelancerComponent implements OnInit {
               public toastr: ToastrService,
               config: NgbRatingConfig,
               public anuntService: AnuntService,
-              public dialogRef: MatDialogRef<DetaliiFreelancerComponent>,
               @Inject(MAT_DIALOG_DATA) public data: Anunt,
-              iconRegistry: MatIconRegistry, sanitizer: DomSanitizer
+              iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
+              public dialog: MatDialog
   ) {
     iconRegistry.addSvgIcon(
       'location',
@@ -75,5 +76,15 @@ export class DetaliiFreelancerComponent implements OnInit {
       this.freelFav.splice(index, 1);
       console.log(this.freelFav);
     }
+  }
+
+  contacteaza(){
+    const dialogRef = this.dialog.open(ChatComponent, {
+      width: '350px',
+      height: '500px',
+      position: { top: '15%', left: '70%' },
+      data: this.data
+    });
+    
   }
 }
