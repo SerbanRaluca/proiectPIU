@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>
+  Detalii Freelancer
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+    <span aria-hidden="true" class="white-text">&times;</span>
+  </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-sm-2" style="margin: 0px;padding: 0px;">
+      <img src='../../../assets/images/{{data.poza}}'
+           style="height:80px;width:80px;border: black 1px solid;margin-top:0px;margin-left: 10px;">
+    </div>
+    <div class="col-sm-5">
+      <h4 style="margin-top: 0px;">{{data.titlu}}</h4>
+      <h6><u>{{data.nume}}</u></h6>
+    </div>
+    <div class="col-sm-3" >
+      <h4 style="margin-top: 0px;">
+        <mat-icon svgIcon="location" aria-hidden="false"
+                  style="width:20px;height:20px; color:cornflowerblue;margin-top:0px;margin-right:10px;"></mat-icon>
+        <p style="display: inline-block;">{{data.locatie}}</p>
+      </h4>
+    </div>
+  </div>
+  <div class="profile-user-info">
+    <div class="profile-info-row">
+      <div class="profile-info-name">
+        <i class="middle ace-icon fa fa-facebook-square bigger-150 blue"></i>
+      </div>
+
+      <div class="profile-info-value">
+        <a>Profil Facebook</a>
+      </div>
+    </div>
+
+    <div class="profile-info-row">
+      <div class="profile-info-name">
+        <i class="middle ace-icon fa fa-linkedin-square bigger-150 light-blue"></i>
+      </div>
+
+      <div class="profile-info-value">
+        <a>LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <h3>Descriere</h3>
+  <p>{{data.descriere}}</p>
+  <h3>Salariu</h3>
+  <p>MIN:{{data.salariu_min}} EURO</p>
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-success" [mat-dialog-close]="data" >Contactează</button>
+  <button class="btn btn-success" >Trimite formular pentru semnare contract</button>
+</div>
+

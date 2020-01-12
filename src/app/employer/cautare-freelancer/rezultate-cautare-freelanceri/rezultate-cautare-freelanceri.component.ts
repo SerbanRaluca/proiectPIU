@@ -3,6 +3,8 @@ import {FreelancerApplication} from '../../../shared/job-application.model';
 import {Anunt} from '../../../shared/anunt.model';
 import {MatDialog} from '@angular/material';
 import {DetaliiFreelancerComponent} from './detalii-freelancer/detalii-freelancer.component';
+import {ReviewFreelancerComponent} from "./review-freelancer/review-freelancer.component";
+import {Review} from "../../../shared/review.model";
 
 @Component({
   selector: 'app-rezultate-cautare-freelanceri',
@@ -25,7 +27,7 @@ export class RezultateCautareFreelanceriComponent implements OnInit {
   onDetails(rez: Anunt) {
     const dialogRef = this.dialog.open(DetaliiFreelancerComponent, {
       width: '800px',
-      height: '500px',
+      height: '600px',
       position: {top: '2%', left: '30%'},
       data: rez
     });
@@ -36,6 +38,21 @@ export class RezultateCautareFreelanceriComponent implements OnInit {
       this.applications.push(new FreelancerApplication(result, 'applied'));
       sessionStorage.setItem('freelancer-applications', JSON.stringify(this.applications));
       console.log(this.applications);
+    });
+
+  }
+
+  onReviews(rez: Anunt) {
+    const dialogRef = this.dialog.open(ReviewFreelancerComponent, {
+      width: '700px',
+      height: '500px',
+      position: {top: '2%', left: '30%'},
+      data: rez
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('dialog closed');
+      console.log(sessionStorage.getItem('name'));
     });
 
   }

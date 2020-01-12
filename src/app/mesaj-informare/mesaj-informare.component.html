@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>
+    Mesaj de informare
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" [mat-dialog-close]="true">
+        <span aria-hidden="true" class="black-text">&times;</span>
+    </button>
+</h1>
+<hr>
+<div mat-dialog-content>
+    <div class="row">
+        <p style="color:black;padding-left:60px;padding-top: 50px;">{{data}}</p>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial (click)="ok()" style="margin-left:150px;">OK</button>
+</div>

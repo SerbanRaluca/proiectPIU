@@ -13,38 +13,40 @@ import { UserContracteComponent } from './user-contracte/user-contracte.componen
 import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/incarcare-documente.component';
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
 import { UserFacebookComponent } from './user-facebook/user-facebook.component';
+import {ContracteComponent} from './user-profile/contracte/contracte.component';
+import {JobFavoriteComponent} from './user-profile/job-favorite/job-favorite.component';
+import {FreelanceriFavoritiComponent} from './user-profile/freelanceri-favoriti/freelanceri-favoriti.component';
+import { AdaugareAnuntJobComponent } from './employer/adaugare-anunt-job/adaugare-anunt-job.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
-    {path:'profil',component:UserProfileComponent,children:[
-
-      {path:'detalii',component:DetaliiProfilComponent},
-
-      {path:'documente',component:IncarcareDocumenteComponent}
+    {path: 'profil', component: UserProfileComponent, children: [
+      {path: 'detalii', component: DetaliiProfilComponent},
+      {path: 'documente', component: IncarcareDocumenteComponent}
     ]},
-
-     {path: 'facebook', component: UserFacebookComponent},
-
-    {path: 'contracte', component:UserContracteComponent},
-
+    {path: 'jobFavorit', component: JobFavoriteComponent},
+    {path: 'freelancerFavorit', component: FreelanceriFavoritiComponent},
+    {path: 'contracte', component: ContracteComponent},
+    {path: 'facebook', component: UserFacebookComponent},
+    {path: 'status', component:UserContracteComponent},
     {
       path: 'candidat', component: EmployeeComponent, children: [
-        {path:' ',redirectTo:'cautare'},
-        {path: 'cautare', component: CautareJobComponent,data: { label: 'Cauta job' } },
-        {path: 'anunt', component: AdaugareAnuntComponent,data: { label: 'Adauga anunt' } }
+        {path: ' ', redirectTo: 'cautare'},
+        {path: 'cautare', component: CautareJobComponent, data: { label: 'Cauta job' } },
+        {path: 'anunt', component: AdaugareAnuntComponent, data: { label: 'Adauga anunt' } }
       ]
     },
     {
       path: 'angajator', component: EmployerComponent, children: [
-        {path: 'cautare', component: CautareFreelancerComponent,data: { label: 'Cauta freelancer' }},
-        {path: 'anunt', component: AdaugareAnuntComponent,data: { label: 'Adauga anunt' }}
+        {path: 'cautare', component: CautareFreelancerComponent, data: { label: 'Cauta freelancer' }},
+        {path: 'anunt', component: AdaugareAnuntJobComponent, data: { label: 'Adauga anunt' }}
       ]
     },
     {path: 'login', component: LoginComponent},
     {path: 'candidatRegistration', component: RegistrationComponent}
-   
+
   ];
-  
+
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]

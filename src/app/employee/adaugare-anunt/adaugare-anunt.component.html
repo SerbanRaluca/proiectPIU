@@ -52,14 +52,6 @@
                         <span *ngIf="postForm.get('salariu-min').errors['required']">Câmp obligatoriu!</span>
                     </span>
                 </div>
-                <div class="max">
-                    MAX:<input type="text" id="salariu" style="width:100px;margin: 10px;" class="form-control"
-                        formControlName="salariu-max">EURO
-                    <span *ngIf="!postForm.get('salariu-max').valid && postForm.get('salariu-max').touched"
-                        class="help-block">
-                        <span *ngIf="postForm.get('salariu-max').errors['required']">Câmp obligatoriu!</span>
-                    </span>
-                </div>
             </div>
         </div>
         <button type="submit" class="btn btn-success" [disabled]="!postForm.valid">Postează anunț</button>

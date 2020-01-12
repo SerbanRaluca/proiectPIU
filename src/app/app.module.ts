@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { MatIconModule, MatDialogModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
@@ -36,7 +36,18 @@ import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
 import { ConfirmareCautareComponent } from './confirmare-cautare/confirmare-cautare.component';
 import { AgmCoreModule } from '@agm/core';
-import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.component';
+import { AsistentaAudioComponent } from './asistenta-audio/asistenta-audio.component';
+import {ContracteComponent} from './user-profile/contracte/contracte.component';
+import {ReviewComponent} from './user-profile/contracte/review/review.component';
+import {ReviewFreelancerComponent} from './employer/cautare-freelancer/rezultate-cautare-freelanceri/review-freelancer/review-freelancer.component';
+import {ToastrModule} from 'ngx-toastr';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {PlataComponent} from "./user-profile/contracte/plata/plata.component";
+import {JobFavoriteComponent} from "./user-profile/job-favorite/job-favorite.component";
+import {FreelanceriFavoritiComponent} from "./user-profile/freelanceri-favoriti/freelanceri-favoriti.component";
+import {JobFavoriteDetailsComponent} from "./user-profile/job-favorite/job-favorite-details/job-favorite-details.component";
+import {FreelancerFavoritDetailsComponent} from "./user-profile/freelanceri-favoriti/freelancer-favorit-details/freelancer-favorit-details.component";
+import { MesajInformareComponent } from './mesaj-informare/mesaj-informare.component';
 
 @NgModule({
   declarations: [
@@ -61,20 +72,36 @@ import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.compo
     IncarcareDocumenteComponent,
     DetaliiProfilComponent,
     ConfirmareCautareComponent,
-    AsistentaAudioComponent
+    AsistentaAudioComponent,
+    ContracteComponent,
+    ReviewComponent,
+    ReviewFreelancerComponent,
+    PlataComponent,
+    JobFavoriteComponent,
+    FreelanceriFavoritiComponent,
+    JobFavoriteDetailsComponent,
+    FreelancerFavoritDetailsComponent,
+    MesajInformareComponent
   ],
 
   entryComponents: [
     DetaliiJobComponent,
+    ReviewFreelancerComponent,
+    JobFavoriteDetailsComponent,
+    FreelancerFavoritDetailsComponent,
+    ReviewComponent,
+    PlataComponent,
     DetaliiFreelancerComponent,
     ConfirmareCautareComponent,
-    AsistentaAudioComponent
+    AsistentaAudioComponent,
+    MesajInformareComponent
   ],
 
   imports: [
-    BrowserModule, 
+    BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -87,6 +114,10 @@ import { AsistentaAudioComponent } from './asisienta-audio/asisienta-audio.compo
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-center'
+    }),
     MatProgressBarModule,
     AgmCoreModule.forRoot({
       // please get your own API key here:

@@ -1,8 +1,8 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserService } from '../shared/user.service';
-import { MatIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
+import {Component, OnInit, OnChanges} from '@angular/core';
+import {Router} from '@angular/router';
+import {UserService} from '../shared/user.service';
+import {MatIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -14,9 +14,9 @@ export class HeaderComponent implements OnInit {
   user: string = null;
 
   constructor(private router: Router,
-    private userService: UserService,
-    iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer) {
+              private userService: UserService,
+              iconRegistry: MatIconRegistry,
+              sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
       'user',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/user.svg'));
@@ -51,12 +51,24 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['candidat']);
   }
 
-  goToProfile(){
+  goToProfile() {
     this.router.navigate(['profil']);
   }
 
-  goToContracte(){
+  goToStatus(){
+    this.router.navigate(['status']);
+  }
+
+  goToContracte() {
     this.router.navigate(['contracte']);
+  }
+
+  goToJF() {
+    this.router.navigate(['jobFavorit']);
+  }
+
+  goToFF() {
+    this.router.navigate(['freelancerFavorit']);
   }
 
 }

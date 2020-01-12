@@ -30,10 +30,11 @@
                 </div>
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="goToProfile()">Profil</button>
-                    <button mat-menu-item>Joburi favorite</button>
-                    <button mat-menu-item (click)="goToContracte()">Status</button>
-                    <button mat-menu-item>Contracte</button>
-                    <button mat-menu-item>Setari</button>
+                    <button mat-menu-item (click)="goToJF()">Joburi favorite</button>
+                    <button mat-menu-item (click)="goToFF()">Freelanceri favoriți</button>
+                    <button mat-menu-item (click)="goToStatus()">Status</button>
+                    <button mat-menu-item (click)="goToContracte()">Contracte</button>
+                    <button mat-menu-item>Setări</button>
                     <button mat-menu-item (click)="logout()">Deconectare</button>
                 </mat-menu>
             </div>

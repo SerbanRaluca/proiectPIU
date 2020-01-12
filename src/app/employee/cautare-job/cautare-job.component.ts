@@ -6,7 +6,8 @@ import { AnuntJob } from 'src/app/shared/anuntJob.model';
 import { AnuntService } from 'src/app/shared/anunt.service';
 import { DateCautare } from 'src/app/shared/dateCautare.model';
 import { ConfirmareCautareComponent } from '../../confirmare-cautare/confirmare-cautare.component';
-import { AsistentaAudioComponent } from 'src/app/asisienta-audio/asisienta-audio.component';
+import { AsistentaAudioComponent } from 'src/app/asistenta-audio/asistenta-audio.component';
+import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
 
 export interface Tile {
   type: string;
@@ -20,6 +21,7 @@ export interface Tile {
   styleUrls: ['./cautare-job.component.css']
 })
 export class CautareJobComponent implements OnInit {
+  [x: string]: any;
 
   rezultate: AnuntJob[];
 
@@ -30,7 +32,7 @@ export class CautareJobComponent implements OnInit {
     'Bucatari',
     'Vanzari',
     'Fotograf evenimente',
-    'Organizator petreceri'
+    'Organizator evenimente'
   ];
 
   locations: String[] = [
@@ -86,22 +88,34 @@ export class CautareJobComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog closed');
+      let rez=[];
       if (result.confirmed) {
         if (result.categorie === 'Toate categoriile') {
-          this.rezultate = this.anuntService.getJobAnunturi();
+          rez = this.anuntService.getJobAnunturi();
         } else {
-          this.rezultate = this.anuntService.getJobAnunturi().filter(a => a.categorie === result.categorie);
+          rez = this.anuntService.getJobAnunturi().filter(a => a.categorie === result.categorie);
         }
 
         if (result.locatie != 'Toate locațiile') {
-          this.rezultate = this.rezultate.filter(a => a.locatie === result.locatie);
+          rez = rez.filter(a => a.locatie === result.locatie);
         }
-        this.selectedCategory = result.categorie;
-        this.selectedLocation = result.locatie;
-        console.log(this.rezultate);
+
+        if (rez.length == 0) {
+          console.log("no results");
+          this.dialog.open(MesajInformareComponent, {
+            width: '400px',
+            height: '300px',
+            position: { top: '2%', left: '30%' },
+            data:'Ne pare rau! Nu s-a gasit niciun rezultat!'
+          });
+        } else {
+          this.selectedCategory = result.categorie;
+          this.selectedLocation = result.locatie;
+          this.rezultate=rez;
+          console.log(this.rezultate);
+        }
       }
     });
-
   }
 
   audio() {
