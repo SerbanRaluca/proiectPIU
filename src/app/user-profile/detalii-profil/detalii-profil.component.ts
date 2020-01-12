@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { User } from 'src/app/shared/user.model';
 import { UserService } from 'src/app/shared/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalii-profil',
@@ -13,7 +14,7 @@ export class DetaliiProfilComponent implements OnInit {
 
   @ViewChild('inputImage', { static: false }) myInputVariable: ElementRef;
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private router: Router) { }
 
   ngOnInit() {
    this.user=this.userService.getUser();
@@ -26,4 +27,8 @@ export class DetaliiProfilComponent implements OnInit {
     this.user.profil.image = image[image.length - 1];
   }
 
+  goToFacebookProfile(){
+    let url = this.router.createUrlTree(['/facebook'])
+    window.open(url.toString(), '_blank')
+  }
 }

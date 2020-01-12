@@ -9,8 +9,10 @@ import {LoginComponent} from './login/login.component';
 import {EmployerComponent} from './employer/employer.component';
 import {CautareFreelancerComponent} from './employer/cautare-freelancer/cautare-freelancer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserContracteComponent } from './user-contracte/user-contracte.component';
 import { IncarcareDocumenteComponent } from './user-profile/incarcare-documente/incarcare-documente.component';
 import { DetaliiProfilComponent } from './user-profile/detalii-profil/detalii-profil.component';
+import { UserFacebookComponent } from './user-facebook/user-facebook.component';
 import {ContracteComponent} from './user-profile/contracte/contracte.component';
 import {JobFavoriteComponent} from './user-profile/job-favorite/job-favorite.component';
 import {FreelanceriFavoritiComponent} from './user-profile/freelanceri-favoriti/freelanceri-favoriti.component';
@@ -25,6 +27,8 @@ const appRoutes: Routes = [
     {path: 'jobFavorit', component: JobFavoriteComponent},
     {path: 'freelancerFavorit', component: FreelanceriFavoritiComponent},
     {path: 'contracte', component: ContracteComponent},
+    {path: 'facebook', component: UserFacebookComponent},
+    {path: 'status', component:UserContracteComponent},
     {
       path: 'candidat', component: EmployeeComponent, children: [
         {path: ' ', redirectTo: 'cautare'},

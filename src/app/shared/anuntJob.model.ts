@@ -10,6 +10,7 @@ export class AnuntJob {
     public aplied: boolean,
     public favorit: boolean,
     public nivel?: string,
+    public status?: string
   ) {
   }
 }

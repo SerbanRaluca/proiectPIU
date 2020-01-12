@@ -55,6 +55,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['profil']);
   }
 
+  goToStatus(){
+    this.router.navigate(['status']);
+  }
+
   goToContracte() {
     this.router.navigate(['contracte']);
   }
