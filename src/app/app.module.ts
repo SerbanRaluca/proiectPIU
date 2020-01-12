@@ -85,7 +85,7 @@ import {ReviewJobsComponent} from "./employee/cautare-job/rezultate-cautare/revi
     JobFavoriteDetailsComponent,
     FreelancerFavoritDetailsComponent,
     MesajInformareComponent,
-    ChatComponent
+    ChatComponent,
     ReviewJobComponent,
     ReviewJobsComponent,
     MesajInformareComponent
