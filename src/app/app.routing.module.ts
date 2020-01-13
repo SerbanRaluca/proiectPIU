@@ -43,7 +43,7 @@ const appRoutes: Routes = [
       ]
     },
     {path: 'login', component: LoginComponent},
-    {path: 'candidatRegistration', component: RegistrationComponent}
+    {path: 'chooseRegistration', component: RegistrationComponent}
 
   ];
 
