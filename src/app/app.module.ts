@@ -51,6 +51,7 @@ import { MesajInformareComponent } from './mesaj-informare/mesaj-informare.compo
 import { ChatComponent } from './chat/chat.component';
 import {ReviewJobComponent} from "./user-profile/contracte/review-job/review-job.component";
 import {ReviewJobsComponent} from "./employee/cautare-job/rezultate-cautare/review-jobs/review-jobs.component";
+import { FormularAngajareComponent } from './formular-angajare/formular-angajare.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import {ReviewJobsComponent} from "./employee/cautare-job/rezultate-cautare/revi
     ChatComponent,
     ReviewJobComponent,
     ReviewJobsComponent,
-    MesajInformareComponent
+    MesajInformareComponent,
+    FormularAngajareComponent
   ],
 
   entryComponents: [
@@ -104,7 +106,8 @@ import {ReviewJobsComponent} from "./employee/cautare-job/rezultate-cautare/revi
     ConfirmareCautareComponent,
     AsistentaAudioComponent,
     MesajInformareComponent,
-    ChatComponent
+    ChatComponent,
+    FormularAngajareComponent
   ],
 
   imports: [

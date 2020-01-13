@@ -8,6 +8,7 @@ import {Review} from '../../../../shared/review.model';
 import {ReviewService} from '../../../../shared/review.service';
 import {NgbRatingConfig} from "@ng-bootstrap/ng-bootstrap";
 import { ChatComponent } from 'src/app/chat/chat.component';
+import { MesajInformareComponent } from 'src/app/mesaj-informare/mesaj-informare.component';
 
 export interface DialogData {
   animal: string;
@@ -79,12 +80,21 @@ export class DetaliiFreelancerComponent implements OnInit {
   }
 
   contacteaza(){
-    const dialogRef = this.dialog.open(ChatComponent, {
+    this.dialog.open(ChatComponent, {
       width: '350px',
       height: '500px',
       position: { top: '15%', left: '70%' },
       data: this.data
     });
     
+  }
+
+  trimiteFormular(){
+    this.dialog.open(MesajInformareComponent,{
+        width: '400px',
+        height: '300px',
+        position: { top: '2%', left: '30%' },
+        data:'Formularul a fost trimis către angajat.'
+    });
   }
 }

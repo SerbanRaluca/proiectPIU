@@ -30,7 +30,7 @@
       </div>
 
       <div class="profile-info-value">
-        <a>Profil Facebook</a>
+        <a href="https://www.facebook.com/moldovan.cristy" target="_blank"> Profil Facebook</a>
       </div>
     </div>
 
@@ -40,7 +40,7 @@
       </div>
 
       <div class="profile-info-value">
-        <a>LinkedIn</a>
+        <a href="https://ro.linkedin.com/in/moldovan-cristian-576933187/%7Bcountry%3Dro%2C+language%3Dro%7D?trk=people-guest_people_search-card" target="_blank">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
   <div class="row" style="margin-top: 10px;">
   <ngb-rating  [(rate)]= sumRating>
     <ng-template let-fill="fill" let-index="index">
-      <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+      <span class="star" [class.filled]="fill === 100" [class.bad]="index > 3">&#9733;</span>
     </ng-template>
   </ngb-rating>
     <p *ngIf="index>1 || index == 0" style="display: inline-block; margin-left: 10px">{{index}} Recenzii</p>
@@ -80,5 +80,5 @@
 </div>
 <div mat-dialog-actions>
   <button class="btn btn-success" [mat-dialog-close]="data" (click)="contacteaza()">Contactează</button>
-  <button class="btn btn-success" >Trimite formular pentru semnare contract</button>
+  <button class="btn btn-success" (click)="trimiteFormular()">Trimite formular pentru semnare contract</button>
 </div>

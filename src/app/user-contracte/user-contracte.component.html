@@ -32,4 +32,32 @@
     <div *ngIf="rezultateContracte.length==0">
       <p style="color: tomato;padding-left:120px;padding-top: 50px;">Nu aveti niciun contract!</p>
     </div>
+    
+    <div *ngIf="user.username=='Moldovan Cristian'">
+      <p class="titlu-contracte"><strong>Oferte angajare:</strong></p>
+      <mat-card style="width:700px;height:200px;margin-left: 25%;margin-bottom: 20px;">
+                    
+         <mat-card-header style="margin-left: 250px;">
+           <mat-card-title style="font-size:20px;color:red;"><p>Ofertă angajare</p></mat-card-title>
+         </mat-card-header>
+
+         <mat-card-content style="margin-left: 15px;">
+          <div class="col-xs-7">
+            <p style="font-size:20px;color:blue">Detalii Angajator</p>
+            <p><u>Angajator</u>:Serban Raluca</p>
+            <p><u>Telefon</u>:0758971584</p>
+            <p><u>Email</u>:serban.raluca@gmail.com</p>
+          </div>
+          <div class="col-xs-5">
+            <mat-icon svgIcon="file" aria-hidden="false"
+            style="width:20px;height:20px; color:cornflowerblue;margin-top: 10px;margin-right:10px;display: inline-block;">
+           </mat-icon>Formular angajare
+            <button class="btn btn-primary" (click)="completeazaFormular()">Completează formular</button>
+          </div>
+          
+         </mat-card-content>
+
+       </mat-card>
+
+    </div>
 </div>

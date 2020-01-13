@@ -1,0 +1,100 @@
+<h1 mat-dialog-title>
+    Formular angajare
+</h1>
+<hr>
+<div mat-dialog-content>
+    <form [formGroup]="postForm">
+        <div class="form-group">
+            <label for="nume" style="margin-right:10px;">Nume și prenume:* </label>
+            <input type="text" id="nume" formControlName="nume" class="formControl">
+            <span *ngIf="!postForm.get('nume').valid && postForm.get('nume').touched" class="help-block">
+                <span *ngIf="postForm.get('nume').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="birthdate" style="margin-right:40px;">Data nașterii:*</label>
+            <input type="text" id="birthdate" formControlName="birthdate" class="formControl">
+            <span *ngIf="!postForm.get('birthdate').valid && postForm.get('birthdate').touched" class="help-block">
+                <span *ngIf="postForm.get('birthdate').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="oras" style="margin-right:90px;">Oraș:*</label>
+            <input type="text" id="oras" formControlName="oras" class="formControl">
+            <span *ngIf="!postForm.get('oras').valid && postForm.get('oras').touched" class="help-block">
+                <span *ngIf="postForm.get('oras').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="adresa" style="margin-right:75px;">Adresă:*</label>
+            <input type="text" id="adresa" formControlName="adresa" class="formControl">
+            <span *ngIf="!postForm.get('adresa').valid && postForm.get('adresa').touched" class="help-block">
+                <span *ngIf="postForm.get('adresa').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="tara" style="margin-right:90px;">Țară:*</label>
+            <input type="text" id="tara" formControlName="tara" class="formControl">
+            <span *ngIf="!postForm.get('tara').valid && postForm.get('tara').touched" class="help-block">
+                <span *ngIf="postForm.get('tara').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="judet" style="margin-right:85px;">Județ:*</label>
+            <input type="text" id="judet" formControlName="judet" class="formControl">
+            <span *ngIf="!postForm.get('judet').valid && postForm.get('judet').touched" class="help-block">
+                <span *ngIf="postForm.get('judet').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="email" style="margin-right:80px;">E-mail:*</label>
+            <input type="text" id="email" formControlName="email" class="formControl">
+            <span *ngIf="!postForm.get('email').valid && postForm.get('email').touched" class="help-block">
+                <span *ngIf="postForm.get('email').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="telefon" style="margin-right:70px;">Telefon:*</label>
+            <input type="text" id="telefon" formControlName="telefon" class="formControl">
+            <span *ngIf="!postForm.get('telefon').valid && postForm.get('telefon').touched" class="help-block">
+                <span *ngIf="postForm.get('telefon').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="studii" style="margin-right:85px;">Studii:*</label>
+            <mat-form-field>
+                <mat-select style="width:200px;" formControlName="studii" class="formControl">
+                    <mat-option *ngFor="let nivel of studii" [value]="nivel">
+                        {{nivel}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <label for="calificare" style="margin-right:70px;">Calificare:*</label>
+            <input type="text" id="calificare" formControlName="calificare" class="formControl">
+            <span *ngIf="!postForm.get('calificare').valid && postForm.get('calificare').touched" class="help-block">
+                <span *ngIf="postForm.get('calificare').errors['required']">Câmp obligatoriu!</span>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="locMunca" style="margin-right:5px;">Ultimul loc de muncă:*</label>
+            <input type="text" id="locMunca" formControlName="locMunca" class="formControl">
+            <span *ngIf="!postForm.get('locMunca').valid && postForm.get('locMunca').touched" class="help-block">
+                <span *ngIf="postForm.get('locMunca').errors['required']" style="text-align: center;">Câmp obligatoriu!</span>
+            </span>
+        </div>
+        
+       									
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial (click)="trimite()" style="margin-left:40%">Trimite</button>
+</div>
